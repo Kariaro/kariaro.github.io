@@ -12,21 +12,19 @@ p {
 
 a {
 	transition: 0.6s;
-	color: #009fff;
+	color: #02e37a;
 	text-decoration: none;
 }
 
 img {
 	width: 100%;
+	min-width: 200px;
+	max-width: 400px;
 }
 
 a:hover {
 	transition: 0.6s;
 	letter-spacing: 1px;
-}
-
-span {
-	p-bottom: 5px;
 }
 
 canvas {
@@ -76,24 +74,20 @@ canvas {
 .content {
 	margin-top: 50px;
 	padding: 10px;
-}
-
-.card {
-	background-color: #000000c2;
-	color: white;
-	padding: 20px;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .horizontal-card {
 	margin-bottom: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	overflow: hidden;
 }
 
 .horizontal-card-2 {
 	display: flex;
 	margin-bottom: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	overflow: hidden;
 }
 
@@ -101,15 +95,32 @@ canvas {
 	.horizontal-card {
 		display: inherit;
 		margin-bottom: 10px;
-		border-radius: 10px;
+		border-radius: 5px;
 		overflow: hidden;
 	}
 	
 	.horizontal-card-2 {
 		display: inherit;
 		margin-bottom: 10px;
-		border-radius: 10px;
+		border-radius: 5px;
 		overflow: hidden;
+	}
+	
+	.card-title {
+		text-align: center;
+	}
+	
+	img {
+		max-width: 100%;
+	}
+	
+	.card-right {
+		padding-top: 0px !important;
+	}
+	
+	.content {
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 }
 
@@ -117,6 +128,17 @@ canvas {
 	text-align: center;
 }
 
+.card, .card-right {
+	background-color: #000000c2;
+	color: white;
+	padding: 20px;
+}
+
 .card-title {
 	margin-bottom: 15px;
+}
+
+.card-right {
+	min-width: 30%;
+	flex: 1;
 }

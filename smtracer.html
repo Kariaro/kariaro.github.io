@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>HardCoded - Documentation</title>
+		<meta name="description" content="A testing webpage">
+		<meta name="author" content="HardCoded">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/smtracer.css">
+		<link rel="shortcut icon" type="image/jpg" href="images/GhidraTracer.png"/>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<div class="top-bar">
+			<div class="navigation-bar">
+				<ul>
+					<li><a href="index.html">GitHub Home</a></li>
+					<li class="navigation-sel"><span>ScrapMechanic Documentation</span></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="content">
+			<div class="v-layout">
+				<div class="h-layout">
+					<div class="box-2" style="max-width: 200px">
+						<img src="images/logo.png"></img>
+					</div>
+					<div class="box-3">
+						<p>I started coding 2012 and since then I done many projects.</p>
+						<span>GitHub: <a href="https://github.com/Kariaro" target="blank">[GitHub HardCoded]</a></span><br>
+						<span>Steam: <a href="http://steamcommunity.com/profiles/76561198251506208" target="blank">[Steam HardCoded]</a></span><br>
+						<span>Twitter: <a href="https://twitter.com/HardCodedTwitch" target="blank">[Twitter HardCoded]</a></span><br>
+						<span>Twitch: <a href="https://www.twitch.tv/hard_coded" target="blank">[Twitch HardCoded]</a></span><br>
+						<span>SoundCloud: <a href="https://soundcloud.com/hard_coded" target="blank">[SoundCloud HardCoded]</a></span>
+					</div>
+				</div>
+				<div class="h-layout">
+					<div class="filler">
+					</div>
+				</div>
+				
+				<div id="docs">
+					<div class="h-layout">
+						<div class="box" style="max-width: 200px">
+							<input id="class-search" placeholder="Search" oninput="search(this.value)" type="text" />
+						</div>
+						<div id="class-container" class="box-2">
+							<div><h2 class="tabledata-header">Tabledata functions</h2></div>
+							
+							<div id="td-func-template">
+								<a class="decllink" name="{LINK}"></a><br><br>
+								<dl>
+									<dt>
+										<code class="declsandbox">{DECLSANDBOX}</code>
+										<code class="declname">{DECLNAME}</code>
+										<span class="declbracket">(</span>
+										{DECLPARAMS}
+										<span class="declbracket">)</span>
+										<!--<span class="right-test">link</span>-->
+									</dt>
+									<dd>
+										<p>{DESCRIPTION}</p>
+										<table style="margin-left: 10px;"><tbody>
+											<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
+											<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
+										</tbody></table>
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="box">
+							<div><h2 class="userdata-header">Userdata functions</h2></div>
+							
+							<div id="ud-func-template">
+								<a class="decllink" name="{LINK}"></a><br><br>
+								<dl>
+									<dt>
+										<code class="declsandbox">{DECLSANDBOX}</code>
+										<code class="declname">{DECLNAME}</code>
+										<span class="declbracket">(</span>
+										{DECLPARAMS}
+										<span class="declbracket">)</span>
+										<span class="right-test">link</span>
+									</dt>
+									<dd>
+										<p>{DESCRIPTION}</p>
+										<table style="margin-left: 10px;"><tbody>
+											<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
+											<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
+										</tbody></table>
+									</dd>
+								</dl>
+							</div>
+							
+							<dl>
+								<dt>
+									<code class="declside"></code>
+									<code class="declname">sm.container.isEmpty( container )</code>
+									<!--<span class="right-test">link</span>-->
+								</dt>
+								<dd>
+									<p>Returns true if the container is empty.</p>
+									<table style="margin-left: 10px;"><tbody>
+										<tr>
+											<th>Parameters:</th>
+											<td>...</td>
+										</tr>
+										<tr>
+											<th>Returns:</th>
+											<td>...</td>
+										</tr>
+									</tbody></table>
+								</dd>
+								<!-- Add more functions -->
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="scripts/sm_script.js"></script>
+	</body>
+</html>

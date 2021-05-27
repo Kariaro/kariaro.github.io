@@ -5,10 +5,8 @@ canvas.width = 2000;
 canvas.height = 2000;
 
 var stars = [], // Array that contains the stars
-	FPS = 15, // Frames per second
 	LEN = 100 // Number of stars
 
-// Push stars to array
 for(var i = 0; i < LEN; i++) {
 	stars.push({
 		x: Math.random() * canvas.width,
@@ -19,7 +17,6 @@ for(var i = 0; i < LEN; i++) {
 	});
 }
 
-// Draw the scene
 function draw() {
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	ctx.globalCompositeOperation = "lighter";
@@ -33,7 +30,6 @@ function draw() {
 		ctx.fill();
 	}
 	
-	//ctx.beginPath();
 	ctx.lineWidth = 1;
 	ctx.strokeStyle = 'white';
 	for(var i = 0; i < LEN; i++) {
@@ -50,10 +46,6 @@ function draw() {
 			}
 		}
 	}
-
-	//ctx.lineWidth = 1;
-	//ctx.strokeStyle = 'white';
-	//ctx.stroke();
 }
 
 function distance( point1, point2 ){
@@ -62,23 +54,32 @@ function distance( point1, point2 ){
 	return Math.sqrt( xx*xx + yy*yy );
 }
 
-// Update star locations
 function update() {
 	for(var i = 0; i < LEN; i++) {
 		var s = stars[i];
-		s.x += s.vx / (FPS * 4);
-		s.y += s.vy / (FPS * 4);
+		s.x += s.vx / 30;
+		s.y += s.vy / 30;
 
 		if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
 		if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
 	}
 }
 
-// Update and draw
+//let fps = 1000 / 15.0;
+//let then = Date.now();
+//let startTime = then;
+
 function tick() {
-	draw();
-	update();
 	requestAnimationFrame(tick);
+	
+	//now = Date.now();
+	//elapsed = now - then;
+	
+	//if(elapsed > fps) {
+	//	then = now - (elapsed % fps);
+		draw();
+		update();
+	//}
 }
 
 tick();

@@ -64,10 +64,19 @@ canvas {
 	padding: 14px 20px;
 	transition: 0.2s;
 	user-select: none;
+	background-color: #191919;
+}
+
+.navigation-bar li > a {
+	letter-spacing: revert;
+}
+
+.navigation-sel {
+	background-color: #111 !important;
 }
 
 .navigation-bar li:hover {
-	background-color: #444;
+	background-color: #333;
 	transition: 0.2s;
 }
 
@@ -79,7 +88,7 @@ canvas {
 }
 
 .horizontal-card {
-	margin-bottom: 10px;
+	margin: 0 5px 10px 5px;
 	border-radius: 5px;
 	overflow: hidden;
 }
@@ -122,6 +131,15 @@ canvas {
 		margin-left: 10px;
 		margin-right: 10px;
 	}
+	
+	.h-layout {
+		display: inherit !important;
+	}
+	
+	.box, .box-2, .box-3, .box-4 {
+		width: 100%;
+		max-width: -moz-available !important;
+	}
 }
 
 .center {
@@ -141,4 +159,55 @@ canvas {
 .card-right {
 	min-width: 30%;
 	flex: 1;
+}
+
+/* Horizontal layout */
+.h-layout {
+	display: flex;
+}
+
+/* Vertical layout */
+.v-layout {
+	display: block;
+	width: 100%;
+}
+
+/* Card */
+.box, .box-2, .box-3, .box-4 {
+	background: #00000073;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 5px;
+	flex: 1;
+}
+
+.box-2 {
+	flex: 2;
+}
+
+.box-3 {
+	flex: 3;
+}
+
+.box-4 {
+	flex: 4;
+}
+
+.filler, .filler-2, .filler-3, .filler-4 {
+	padding: 10px;
+	border-radius: 10px;
+	margin: 5px;
+	flex: 1;
+}
+
+.filler-2 {
+	flex: 2;
+}
+
+.filler-3 {
+	flex: 3;
+}
+
+.filler-4 {
+	flex: 4;
 }

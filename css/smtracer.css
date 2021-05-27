@@ -1,0 +1,83 @@
+#td-func-template {
+	display: none;
+}
+
+dt {
+	background-color: #12304a;
+	border-top: 4px solid #384d7b;
+	margin-bottom: 10px;
+	padding: 0 5px 5px 0;
+}
+
+code.declsandbox {
+	margin-left: 0.5em;
+}
+
+code.declparam {
+	color: #bda93d;
+}
+
+ul.parameters {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+ul.parameters li {
+	font-size: 0.8em;
+}
+
+.hide-element {
+	display: none;
+}
+
+ul.parameters li span {
+	font-size: 1.25em;
+	display: contents;
+}
+
+span.declparam-table em {
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #3a899b;
+}
+
+span.declparam-table code em {
+	color: #a28c19;
+	font-weight: revert;
+}
+
+a.decllink {
+	background: #000;
+}
+ 
+dd {
+	margin-inline-start: 30px;
+	font-size: 0.9em;
+}
+
+th {
+	float: left;
+}
+
+span.right-test {
+	color: #e4ec6b;
+	font-size: 0.8em;
+	float: right;
+	margin-top: 0.2em;
+	height: 20px;
+}
+
+#class-search {
+	width: 100%;
+	width: -moz-available;
+	background: #000;
+	color: white;
+	border: 2px solid #222;
+	border-radius: 3px;
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+h2.userdata-header, h2.tabledata-header {
+	color: #9d9d9d;
+}

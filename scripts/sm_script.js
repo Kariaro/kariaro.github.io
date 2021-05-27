@@ -1,6 +1,9 @@
 var trace_div = document.getElementById('docs');
+var search_list = document.getElementById('class-search-list');
 var td_template = document.getElementById('td-func-template');
-var container = document.getElementById('class-container');
+var ud_template = document.getElementById('ud-func-template');
+var td_container = document.getElementById('td-container');
+var ud_container = document.getElementById('ud-container');
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -15,12 +18,16 @@ xmlhttp.send();
 
 function makePackage(json) {
 	let content = json.content;
-	let a = false;
+	
 	Object.keys(content).forEach((key) => {
-		if(a) return;
 		makeClass(key, content[key]);
-		console.log(content[key].tabledata);
-		a = Object.keys(content[key].tabledata).length > 0;
+		
+		{
+			let elm = document.createElement('li');
+			elm.onclick = () => { select_class(key); };
+			elm.innerHTML = '<a>' + escapeHtml(key) + '</a>';
+			search_list.appendChild(elm);
+		}
 	});
 }
 
@@ -29,18 +36,29 @@ function makeClass(path, json) {
 	let constants = json.constants;
 	let tabledata = json.tabledata;
 	let userdata = json.userdata;
-	let div = document.createElement('div');
 	
+	let td_div = document.createElement('div');
+	td_div.id = 'td_' + path;
+	td_div.style.display = 'none';
 	Object.keys(tabledata).forEach((key) => {
-		let elm = makeFunction(path, key, tabledata[key]);
-		div.appendChild(elm);
+		let element = td_template.cloneNode(true);
+		let elm = makeFunction(element, path, key, tabledata[key]);
+		td_div.appendChild(elm);
 	});
+	td_container.appendChild(td_div);
 	
-	container.appendChild(div);
+	let ud_div = document.createElement('div');
+	ud_div.id = 'ud_' + path;
+	ud_div.style.display = 'none';
+	Object.keys(userdata).forEach((key) => {
+		let element = ud_template.cloneNode(true);
+		let elm = makeFunction(element, path, key, userdata[key]);
+		ud_div.appendChild(elm);
+	});
+	ud_container.appendChild(ud_div);
 }
 
-function makeFunction(path, name, json) {
-	let element = td_template.cloneNode(true);
+function makeFunction(element, path, name, json) {
 	/* Remove ID template attribute */
 	element.removeAttribute('id');
 	
@@ -94,7 +112,7 @@ function stringifyParam(param, allowMultiple) {
 	}
 	
 	if(allowMultiple) {
-		return '<span class="declparam-table"><em> { </em><code class="declparam"><em>' + types + '</em></code><em> }</em></span>';
+		return '<span class="declparam-table"><em> { </em><code class="declparam"><em>' + escapeHtml(types) + '</em></code><em> }</em></span>';
 	}
 	
 	return '<span class="declparam-table"><em> { </em><code class="declparam"><em>multiple</em></code><em> } </em></span>';
@@ -123,3 +141,31 @@ function escapeHtml(unsafe) {
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
  }
+
+function class_list_search(value) {
+	var li = search_list.getElementsByTagName('li');
+	var filter = value.toUpperCase();
+	for(i = 0; i < li.length; i++) {
+		a = li[i].getElementsByTagName('a')[0];
+		txt = a.textContent || a.innerText;
+		if(txt.toUpperCase().indexOf(filter) > -1) {
+			li[i].style.display = "";
+		} else {
+			li[i].style.display = "none";
+		}
+	}
+}
+
+let last_selected_key;
+function select_class(key) {
+	let last_td = document.getElementById('td_' + last_selected_key);
+	let last_ud = document.getElementById('ud_' + last_selected_key);
+	if(last_td) last_td.style.display = 'none';
+	if(last_ud) last_ud.style.display = 'none';
+	let new_td = document.getElementById('td_' + key);
+	let new_ud = document.getElementById('ud_' + key);
+	last_selected_key = key;
+	if(new_td) new_td.style.display = '';
+	if(new_ud) new_ud.style.display = '';
+}
+

@@ -1,6 +1,43 @@
-#td-func-template {
+#td-func-template, #ud-func-template {
 	display: none;
 }
+
+#class-search-list {
+	list-style: none;
+	padding-bottom: 0;
+	padding-left: 0;
+	background-color: #111;
+	margin-bottom: 0;
+}
+
+#class-search-list li {
+	padding-left: 30px;
+	background-color: #111;
+}
+
+#class-search-list li a {
+	color: white;
+	letter-spacing: revert;
+	user-select: none;
+}
+
+#class-search-list li:hover {
+	background-color: #191919;
+	cursor: pointer;
+}
+
+#class-search {
+	width: 100%;
+	width: -moz-available;
+	background: #000;
+	color: white;
+	border: 2px solid #222;
+	border-radius: 3px;
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+
 
 dt {
 	background-color: #12304a;
@@ -65,17 +102,6 @@ span.right-test {
 	float: right;
 	margin-top: 0.2em;
 	height: 20px;
-}
-
-#class-search {
-	width: 100%;
-	width: -moz-available;
-	background: #000;
-	color: white;
-	border: 2px solid #222;
-	border-radius: 3px;
-	font-size: 0.9em;
-	font-style: italic;
 }
 
 h2.userdata-header, h2.tabledata-header {

@@ -18,9 +18,26 @@ xmlhttp.send();
 
 function makePackage(json) {
 	let content = json.content;
+	let hash = window.location.hash;
+	let hash_parent = '';
+	if(hash) {
+		hash = hash.substring(1);
+		let idx = hash.lastIndexOf('.');
+		if(idx >= 0) hash_parent = hash.substring(0, idx);
+	}
+	let exact = false;
 	
 	Object.keys(content).forEach((key) => {
 		makeClass(key, content[key]);
+		
+		if(!exact) {
+			if(key === hash) {
+				exact = true;
+				select_class(key);
+			} else if(key === hash_parent){
+				select_class(key);
+			}
+		}
 		
 		{
 			let elm = document.createElement('li');
@@ -29,6 +46,8 @@ function makePackage(json) {
 			search_list.appendChild(elm);
 		}
 	});
+	
+	window.location.hash = '#' + hash;
 }
 
 /* Create a class from the top table component */

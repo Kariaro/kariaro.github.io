@@ -53,7 +53,7 @@ function makePackage(json) {
 
 		let hash_namespace = '';
 		let hash_function = '';
-		let idx = hash.indexOf('_');
+		let idx = hash.lastIndexOf('.');
 		if(idx >= 0) {
 			hash_namespace = hash.substring(0, idx);
 			hash_function = hash.substring(idx + 1);
@@ -129,11 +129,11 @@ function makeFunction(element, path, name, json) {
 		replace(element, '{DESCRIPTION}', '');
 	}
 	
-	let hash_path = path + '_' + name;
+	let hash_path = path + '.' + name;
 	element.id = escapeHtml(hash_path);
 	replace(element, '{DECLSANDBOX}', escapeHtml(json.sandbox));
 	replace(element, '{DECLPARAMS}', makeDeclparams(json.params));
-	replace(element, '{DECLNAME}', escapeHtml(path + '.' + name));
+	replace(element, '{DECLNAME}', escapeHtml(hash_path));
 	replace(element, '{PARAMETERS}', makeParameters(json.params));
 	replace(element, '{HAS_PARAMETERS}', (json.params.length == 0) ? 'hide-element':'');
 	replace(element, '{RETURNS}', escapeHtml(json.returns));

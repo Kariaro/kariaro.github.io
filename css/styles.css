@@ -139,6 +139,7 @@ canvas {
 	.box, .box-2, .box-3, .box-4 {
 		width: 100%;
 		max-width: -moz-available !important;
+		max-width: -webkit-fill-available;
 	}
 }
 

@@ -1,11 +1,11 @@
 {
 	"author": "HardCoded",
-	"version": "invalid",
+	"version": "0.5.1_658",
 	"comment": "This json file was made by the ghidra module ScrapMechanicTracer. https://github.com/Kariaro/ScrapMechanicTracer",
-	"time": 1622368586765,
+	"time": 1622130353582,
 	"urls": {
-		"github": "https://www.twitch.tv/hard_coded",
 		"twitch": "https://github.com/Kariaro",
+		"github": "https://www.twitch.tv/hard_coded",
 		"twitter": "https://twitter.com/HardCodedTwitch"
 	},
 	"content": {
@@ -1847,7 +1847,46 @@
 		},
 		"sm.network": {
 			"constants": {},
-			"tabledata": {},
+			"tabledata": {
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				}
+			},
 			"userdata": {
 				"sendToServer": {
 					"args": 3,
@@ -1956,44 +1995,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -2037,42 +2038,6 @@
 						}
 					],
 					"returns": []
-				}
-			},
-			"userdata": {
-				"save": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"storage"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table",
-								"string",
-								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"load": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"storage"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -2106,6 +2071,42 @@
 						{
 							"type": [
 								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				}
+			},
+			"userdata": {
+				"save": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"storage"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table",
+								"string",
+								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"load": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"storage"
 							],
 							"name": ""
 						}
@@ -3673,6 +3674,63 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"shape"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"shape"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			},
 			"userdata": {
@@ -4234,63 +4292,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"shape"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"shape"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -4813,6 +4814,63 @@
 						{
 							"type": [
 								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"body"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"body"
 							],
 							"name": ""
 						}
@@ -5411,63 +5469,6 @@
 						{
 							"type": [
 								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"body"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"body"
 							],
 							"name": ""
 						}
@@ -6155,6 +6156,63 @@
 								"table",
 								"string",
 								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"interactable"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"interactable"
 							],
 							"name": ""
 						}
@@ -7376,63 +7434,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"interactable"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"interactable"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -7751,6 +7752,63 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			},
 			"userdata": {
@@ -8061,63 +8119,6 @@
 							"type": [
 								"number",
 								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"joint"
 							],
 							"name": ""
 						}
@@ -8586,6 +8587,63 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"container"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"container"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			},
 			"userdata": {
@@ -8835,63 +8893,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"container"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"container"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -8994,6 +8995,63 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"quest"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"quest"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			},
 			"userdata": {
@@ -9066,63 +9124,6 @@
 					"args": 1,
 					"sandbox": "",
 					"params": [
-						{
-							"type": [
-								"quest"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"quest"
-							],
-							"name": ""
-						},
 						{
 							"type": [
 								"quest"
@@ -9460,6 +9461,63 @@
 						{
 							"type": [
 								"table"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"harvestable"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"harvestable"
 							],
 							"name": ""
 						}
@@ -9850,63 +9908,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"harvestable"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"harvestable"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -9965,6 +9966,63 @@
 						{
 							"type": [
 								"table"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"character"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"character"
 							],
 							"name": ""
 						}
@@ -10818,63 +10876,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"character"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"character"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -10928,6 +10929,63 @@
 					"args": -1,
 					"sandbox": "",
 					"params": [],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"player"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"player"
+							],
+							"name": ""
+						}
+					],
 					"returns": []
 				}
 			},
@@ -11067,6 +11125,51 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
+				}
+			}
+		},
+		"sm.unit": {
+			"constants": {},
+			"tabledata": {
+				"createUnit": {
+					"args": 4,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"uuid"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table",
+								"string",
+								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"getAllUnits": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -11112,62 +11215,17 @@
 					"params": [
 						{
 							"type": [
-								"player"
+								"unit"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"player"
+								"unit"
 							],
 							"name": ""
 						}
 					],
-					"returns": []
-				}
-			}
-		},
-		"sm.unit": {
-			"constants": {},
-			"tabledata": {
-				"createUnit": {
-					"args": 4,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"uuid"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table",
-								"string",
-								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getAllUnits": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
 					"returns": []
 				}
 			},
@@ -11382,14 +11440,19 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
-				},
+				}
+			}
+		},
+		"sm.aiState": {
+			"constants": {},
+			"tabledata": {
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
 					"params": [
 						{
 							"type": [
-								"unknown"
+								"aistate"
 							],
 							"name": ""
 						},
@@ -11408,7 +11471,7 @@
 					"params": [
 						{
 							"type": [
-								"unknown"
+								"aistate"
 							],
 							"name": ""
 						},
@@ -11427,24 +11490,26 @@
 					"params": [
 						{
 							"type": [
-								"unit"
+								"aistate"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"unit"
+								"aistate"
 							],
 							"name": ""
 						}
 					],
 					"returns": []
+				},
+				"__gc": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
 				}
-			}
-		},
-		"sm.aiState": {
-			"constants": {},
-			"tabledata": {},
+			},
 			"userdata": {
 				"start": {
 					"args": 1,
@@ -11576,69 +11641,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"aistate"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"aistate"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"aistate"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"aistate"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__gc": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
 				}
 			}
 		},
@@ -11761,6 +11763,76 @@
 					"returns": []
 				},
 				"destroy": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"areatrigger"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"areatrigger"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"areatrigger"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__gc": {
 					"args": 1,
 					"sandbox": "",
 					"params": [
@@ -11992,76 +12064,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"areatrigger"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"areatrigger"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__gc": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"areatrigger"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -12126,6 +12128,63 @@
 						{
 							"type": [
 								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"portal"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"portal"
 							],
 							"name": ""
 						}
@@ -12352,7 +12411,12 @@
 						}
 					],
 					"returns": []
-				},
+				}
+			}
+		},
+		"sm.lift": {
+			"constants": {},
+			"tabledata": {
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -12397,24 +12461,20 @@
 					"params": [
 						{
 							"type": [
-								"portal"
+								"lift"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"portal"
+								"lift"
 							],
 							"name": ""
 						}
 					],
 					"returns": []
 				}
-			}
-		},
-		"sm.lift": {
-			"constants": {},
-			"tabledata": {},
+			},
 			"userdata": {
 				"getId": {
 					"args": 1,
@@ -12445,63 +12505,6 @@
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"lift"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"lift"
-							],
-							"name": ""
-						}
-					],
 					"returns": []
 				}
 			}
@@ -12938,171 +12941,6 @@
 						}
 					],
 					"returns": []
-				}
-			},
-			"userdata": {
-				"normalize": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"dot": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"cross": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"length": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"length2": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotateX": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotateY": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotateZ": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotate": {
-					"args": 3,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -13283,6 +13121,171 @@
 					"args": 1,
 					"sandbox": "",
 					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				}
+			},
+			"userdata": {
+				"normalize": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"dot": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"cross": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"length": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"length2": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"rotateX": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"rotateY": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"rotateZ": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"rotate": {
+					"args": 3,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
 						{
 							"type": [
 								"vec3"
@@ -13547,9 +13550,7 @@
 						}
 					],
 					"returns": []
-				}
-			},
-			"userdata": {
+				},
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -13627,7 +13628,8 @@
 					],
 					"returns": []
 				}
-			}
+			},
+			"userdata": {}
 		},
 		"sm.uuid": {
 			"constants": {},
@@ -13650,9 +13652,7 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
-				}
-			},
-			"userdata": {
+				},
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -13723,7 +13723,8 @@
 					],
 					"returns": []
 				}
-			}
+			},
+			"userdata": {}
 		},
 		"sm.color": {
 			"constants": {},
@@ -13895,21 +13896,6 @@
 						}
 					],
 					"returns": []
-				}
-			},
-			"userdata": {
-				"getHexStr": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"color"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -14061,11 +14047,65 @@
 					],
 					"returns": []
 				}
+			},
+			"userdata": {
+				"getHexStr": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"color"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				}
 			}
 		},
 		"sm.raycastResult": {
 			"constants": {},
-			"tabledata": {},
+			"tabledata": {
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				}
+			},
 			"userdata": {
 				"getBody": {
 					"args": 1,
@@ -14157,44 +14197,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -14219,58 +14221,6 @@
 							"name": ""
 						}
 					],
-					"returns": []
-				}
-			},
-			"userdata": {
-				"destroy": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
-				},
-				"connect": {
-					"args": 5,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"pathnode"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getPosition": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
 					"returns": []
 				},
 				"__newindex": {
@@ -14328,6 +14278,58 @@
 							"name": ""
 						}
 					],
+					"returns": []
+				}
+			},
+			"userdata": {
+				"destroy": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
+				},
+				"connect": {
+					"args": 5,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"pathnode"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"getPosition": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
 					"returns": []
 				}
 			}
@@ -15028,6 +15030,63 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"widget"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"widget"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			},
 			"userdata": {
@@ -15102,7 +15161,12 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
-				},
+				}
+			}
+		},
+		"sm.gui.interface": {
+			"constants": {},
+			"tabledata": {
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -15147,24 +15211,33 @@
 					"params": [
 						{
 							"type": [
-								"widget"
+								"guiinterface"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"widget"
+								"guiinterface"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__gc": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"guiinterface"
 							],
 							"name": ""
 						}
 					],
 					"returns": []
 				}
-			}
-		},
-		"sm.gui.interface": {
-			"constants": {},
-			"tabledata": {},
+			},
 			"userdata": {
 				"destroy": {
 					"args": 1,
@@ -16050,76 +16123,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"guiinterface"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"guiinterface"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__gc": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"guiinterface"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -16270,6 +16273,76 @@
 						{
 							"type": [
 								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"effect"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"effect"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__gc": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"effect"
 							],
 							"name": ""
 						}
@@ -16494,76 +16567,6 @@
 								"quat",
 								"color",
 								"uuid"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"effect"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"effect"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__gc": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"effect"
 							],
 							"name": ""
 						}
@@ -17095,6 +17098,44 @@
 						{
 							"type": [
 								"uuid"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
 							],
 							"name": ""
 						}
@@ -17782,44 +17823,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			}
 		},
@@ -17994,40 +17997,6 @@
 						}
 					],
 					"returns": []
-				}
-			},
-			"userdata": {
-				"setPosition": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"blueprint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"destroy": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"blueprint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -18090,6 +18059,40 @@
 					"args": -1,
 					"sandbox": "",
 					"params": [],
+					"returns": []
+				}
+			},
+			"userdata": {
+				"setPosition": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"blueprint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"destroy": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"blueprint"
+							],
+							"name": ""
+						}
+					],
 					"returns": []
 				}
 			}

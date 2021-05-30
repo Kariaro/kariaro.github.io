@@ -47,47 +47,48 @@
 							<input id="class-search" placeholder="Search" oninput="class_list_search(this.value)" type="text" />
 							<ul id="class-search-list"></ul>
 						</div>
-						<div id="td-container" class="box-3">
-							<div><h2 class="tabledata-header">Tabledata functions</h2></div>
-							
-							<div id="td-func-template">
-								<a class="decllink" name="{LINK}"></a><br><br>
-								<dl>
-									<dt>
-										<code class="declsandbox">{DECLSANDBOX}</code>
-										<code class="declname">{DECLNAME}</code><span class="declparameters">{DECLPARAMS}</span>
-										<!--<span class="right-test">link</span>-->
-									</dt>
-									<dd>
-										<p>{DESCRIPTION}</p>
-										<table style="margin-left: 10px;"><tbody>
-											<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
-											<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
-										</tbody></table>
-									</dd>
-								</dl>
+						<div class="box">
+							<div id="td-container">
+								<div><h2 class="tabledata-header">Tabledata functions</h2></div>
+								
+								<div id="td-func-template">
+									<br><br>
+									<dl>
+										<dt>
+											<code class="declsandbox">{DECLSANDBOX}</code>
+											<code class="declname">{DECLNAME}</code><span class="declparameters">{DECLPARAMS}</span>
+											<span class="decllink" onClick="{COPY_CLICK}"></span>
+										</dt>
+										<dd>
+											<p>{DESCRIPTION}</p>
+											<table style="margin-left: 10px;"><tbody>
+												<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
+												<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
+											</tbody></table>
+										</dd>
+									</dl>
+								</div>
 							</div>
-						</div>
-						<div id="ud-container" class="box-2">
-							<div><h2 class="userdata-header">Userdata functions</h2></div>
-							
-							<div id="ud-func-template">
-								<a class="decllink" name="{LINK}"></a><br><br>
-								<dl>
-									<dt>
-										<code class="declsandbox">{DECLSANDBOX}</code>
-										<code class="declname">{DECLNAME}</code>
-										<span class="declparameters">{DECLPARAMS}</span>
-										<span class="right-test">link</span>
-									</dt>
-									<dd>
-										<p>{DESCRIPTION}</p>
-										<table style="margin-left: 10px;"><tbody>
-											<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
-											<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
-										</tbody></table>
-									</dd>
-								</dl>
+							<div id="ud-container">
+								<div><h2 class="userdata-header">Userdata functions</h2></div>
+								
+								<div id="ud-func-template">
+									<br><br>
+									<dl>
+										<dt class="ud-func">
+											<code class="declsandbox">{DECLSANDBOX}</code>
+											<code class="declname">{DECLNAME}</code><span class="declparameters">{DECLPARAMS}</span>
+											<span class="decllink" onClick="{COPY_CLICK}"></span>
+										</dt>
+										<dd>
+											<p>{DESCRIPTION}</p>
+											<table style="margin-left: 10px;"><tbody>
+												<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
+												<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
+											</tbody></table>
+										</dd>
+									</dl>
+								</div>
 							</div>
 						</div>
 					</div>

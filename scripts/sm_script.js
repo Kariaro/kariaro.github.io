@@ -11,7 +11,6 @@ xmlhttp.onreadystatechange = function() {
 	}
 };
 xmlhttp.open('GET', 'traces/api.0.5.1_658.json', true);
-//xmlhttp.setRequestHeader('Cache-Control', 'max-age=3600');
 xmlhttp.send();
 
 function makePackage(json) {
@@ -46,22 +45,26 @@ function makePackage(json) {
 		search_list.appendChild(search_elements[i]);
 	}
 
-	/* Search for the text that is already present in the search bar */
+	/* Search for the text that is already present in the search */
 	class_list_search(document.getElementById('class-search').value);
 
-	//console.log(packages);
+	if(window.location.hash) {
+		let hash = window.location.hash.substring(1);
 
-	/*
-	let hash = window.location.hash;
-	let hash_parent = '';
-	if(hash) {
-		hash = hash.substring(1);
-		let idx = hash.lastIndexOf('.');
-		if(idx >= 0) hash_parent = hash.substring(0, idx);
+		let hash_namespace = '';
+		let hash_function = '';
+		let idx = hash.indexOf('_');
+		if(idx >= 0) {
+			hash_namespace = hash.substring(0, idx);
+			hash_function = hash.substring(idx + 1);
+			select_class(hash_namespace);
+		} else {
+			select_class(hash);
+		}
+
+		window.location.hash = '#';
+		window.location.hash = '#' + hash;
 	}
-	let exact = false;
-	window.location.hash = '#' + hash;
-	*/
 }
 
 /* Create a class from the top table component */
@@ -126,14 +129,16 @@ function makeFunction(element, path, name, json) {
 		replace(element, '{DESCRIPTION}', '');
 	}
 	
+	let hash_path = path + '_' + name;
+	element.id = escapeHtml(hash_path);
 	replace(element, '{DECLSANDBOX}', escapeHtml(json.sandbox));
 	replace(element, '{DECLPARAMS}', makeDeclparams(json.params));
 	replace(element, '{DECLNAME}', escapeHtml(path + '.' + name));
-	replace(element, '{LINK}', escapeHtml(path + '.' + name));
 	replace(element, '{PARAMETERS}', makeParameters(json.params));
 	replace(element, '{HAS_PARAMETERS}', (json.params.length == 0) ? 'hide-element':'');
 	replace(element, '{RETURNS}', escapeHtml(json.returns));
-	
+	replace(element, '{COPY_CLICK}', 'copyPragmalink(\'' + encodeURI(hash_path) + '\')');
+	functions.push({ 'name': name, 'elm': element });
 	return element;
 }
 
@@ -169,31 +174,69 @@ function stringifyParam(param, allowMultiple) {
 		return '<code class="declparam">' + escapeHtml(types) + '</code>';
 	}
 	
-	if(allowMultiple) {
-		return '<span class="declparam-table"><code class="declparam">' + escapeHtml(types) + '</code></span>';
-	}
-	
-	return '<span class="declparam-table"><code class="declparam">multiple</code></span>';
+	return '<span class="declparam-table"><code class="declparam">' + escapeHtml(types) + '</code></span>';
 }
 
 function makeDeclparams(params) {
 	let result = '';
 	for(let i = 0; i < params.length; i++) {
 		result += stringifyParam(params[i]);
-		//if(i + 1 < params.length) result += ', ';
 	}
 	return result;
 }
 
+var last_func_state = false;
 function class_list_search(value) {
-	var li = search_list.getElementsByTagName('li');
 	var filter = value.toUpperCase();
-	for(i = 0; i < li.length; i++) {
-		let txt = li[i].innerText;
-		if(txt.toUpperCase().indexOf(filter) > -1) {
-			li[i].style.display = '';
-		} else {
-			li[i].style.display = 'none';
+
+	let found = false;
+	let list = search_list.childNodes;
+	for(let i in list) {
+		let li = list[i];
+
+		let txt = li.innerText;
+		if(txt) {
+			if(txt.toUpperCase().indexOf(filter) > -1) {
+				li.style.display = '';
+				found = true;
+			} else {
+				li.style.display = 'none';
+			}
+		}
+	}
+
+	if(last_func_state != found) {
+		for(let i = 0; i < functions.length; i++) {
+			functions[i].elm.style.display = '';
+			functions[i].elm.parentNode.style.display = 'none';
+		}
+		
+		last_func_state = found;
+	}
+
+	if(!found) {
+		filter = filter.trim();
+		console.log('Function search');
+
+		for(let i = 0; i < packages.length; i++) {
+			let obj = packages[i];
+			if(obj.tabledata) obj.tabledata.style.display = '';
+			if(obj.constants) obj.constants.style.display = '';
+			if(obj.userdata) obj.userdata.style.display = '';
+		}
+
+		for(let i = 0; i < functions.length; i++) {
+			let obj = functions[i];
+
+			let txt = obj.name;
+			if(txt) {
+				if(txt.toUpperCase().indexOf(filter) > -1) {
+					obj.elm.style.display = '';
+					obj.elm.parentNode.style.display = '';
+				} else {
+					obj.elm.style.display = 'none';
+				}
+			}
 		}
 	}
 }
@@ -214,6 +257,9 @@ function select_class(key) {
 		if(obj.tabledata) obj.tabledata.style.display = '';
 		if(obj.constants) obj.constants.style.display = '';
 		if(obj.userdata) obj.userdata.style.display = '';
+
+		ud_container.style.display = obj.userdata ? '':'none';
+		td_container.style.display = obj.tabledata ? '':'none';
 	}
 
 	last_selected_key = key;

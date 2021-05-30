@@ -125,9 +125,8 @@ span.declparameters:after {
 
 
 
-
-a.decllink {
-	background: #000;
+#td-container {
+	margin-bottom: 100px;
 }
  
 dd {
@@ -139,14 +138,26 @@ th {
 	float: left;
 }
 
-span.right-test {
+span.decllink {
 	color: #e4ec6b;
 	font-size: 0.8em;
 	float: right;
 	margin-top: 0.2em;
 	height: 20px;
+	cursor: pointer;
+}
+
+span.decllink:after {
+	content: 'link';
 }
 
 h2.userdata-header, h2.tabledata-header {
 	color: #9d9d9d;
+}
+
+.ud-func {
+	background-color: #232a31;
+	border-top: 4px solid #434853;
+	margin-bottom: 10px;
+	padding: 0 5px 5px 0;
 }

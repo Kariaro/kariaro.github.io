@@ -35,6 +35,7 @@ function createUserdata() {
  * This field will contain the packages
  */
 var packages = {};
+var functions = [];
 
 function addPackage(name, value) {
 	packages[name] = value;
@@ -53,3 +54,14 @@ function isMapEmpty(map) {
 	if(map) return Object.keys(map).length == 0;
 	return true;
 }
+
+/* Create a string 'thispage/#<permalink>' */
+function copyPragmalink(key) {
+	const el = document.createElement('textarea');
+	el.value = window.location.host + window.location.pathname + '#' + key;
+	document.body.appendChild(el);
+	el.select();
+	document.execCommand('copy');
+	document.body.removeChild(el);
+}
+

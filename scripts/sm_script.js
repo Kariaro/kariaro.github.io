@@ -6,8 +6,11 @@ var ud_container = document.getElementById('ud-container');
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
 	if(this.readyState == 4 && this.status == 200) {
-		var json = JSON.parse(this.responseText);
-		makePackage(json);
+		try {
+			makePackage(JSON.parse(this.responseText));
+		} catch(error) {
+			Utils.showErrorDiv(error);
+		}
 	}
 };
 xmlhttp.open('GET', 'traces/api.0.5.1_658.json', true);
@@ -50,18 +53,8 @@ function makePackage(json) {
 
 	if(window.location.hash) {
 		let hash = window.location.hash.substring(1);
-
-		let hash_namespace = '';
-		let hash_function = '';
-		let idx = hash.lastIndexOf('.');
-		if(idx >= 0) {
-			hash_namespace = hash.substring(0, idx);
-			hash_function = hash.substring(idx + 1);
-			select_class(hash_namespace);
-		} else {
-			select_class(hash);
-		}
-
+		let value = getHashNamespace(hash);
+		select_class(value);
 		window.location.hash = '#';
 		window.location.hash = '#' + hash;
 	}
@@ -87,7 +80,7 @@ function makeClass(path, json) {
 			for(let i in keys) {
 				let key = keys[i];
 				let element = createTabledata();
-				makeFunction(element, path, key, tabledata[key]);
+				makeFunction(element, path, false, key, tabledata[key]);
 				td_div.appendChild(element);
 			}
 
@@ -107,7 +100,7 @@ function makeClass(path, json) {
 			for(let i in keys) {
 				let key = keys[i];
 				let element = createUserdata();
-				makeFunction(element, path, key, userdata[key]);
+				makeFunction(element, path, true, key, userdata[key]);
 				ud_div.appendChild(element);
 			}
 
@@ -122,22 +115,31 @@ function makeClass(path, json) {
 	return result;
 }
 
-function makeFunction(element, path, name, json) {
-	if('description' in json) {
-		replace(element, '{DESCRIPTION}', escapeHtml(json.description));
-	} else {
-		replace(element, '{DESCRIPTION}', '');
+function makeFunction(element, path, is_userdata, name, json) {
+	var builder = new TemplateBuilder(element);
+
+	if(is_userdata) {
+		if(json.params) {
+			if(json.params.length > 0) {
+				json.params[0].name = 'self';
+			} else {
+				json.params.push({ 'name': 'self', 'type': [ 'unknown' ] });
+			}
+		} else {
+			json.params = [{ 'name': 'self', 'type': [ 'unknown' ] }];
+		}
 	}
 	
-	let hash_path = path + '.' + name;
-	element.id = escapeHtml(hash_path);
-	replace(element, '{DECLSANDBOX}', escapeHtml(json.sandbox));
-	replace(element, '{DECLPARAMS}', makeDeclparams(json.params));
-	replace(element, '{DECLNAME}', escapeHtml(hash_path));
-	replace(element, '{PARAMETERS}', makeParameters(json.params));
-	replace(element, '{HAS_PARAMETERS}', (json.params.length == 0) ? 'hide-element':'');
-	replace(element, '{RETURNS}', escapeHtml(json.returns));
-	replace(element, '{COPY_CLICK}', 'copyPragmalink(\'' + encodeURI(hash_path) + '\')');
+	let decl_name = Utils.escapeHtml(is_userdata ? (path + ':' + name):(path + '.' + name));
+	element.id = decl_name;
+	builder.set('{DECLSANDBOX}', Utils.escapeHtml(json.sandbox))
+		.set('{DESCRIPTION}', ('description' in json) ? Utils.escapeHtml(json.description):'')
+		.set('{DECLPARAMS}', makeDeclparams(json.params))
+		.set('{DECLNAME}', decl_name)
+		.set('{PARAMETERS}', makeParameters(json.params))
+		.set('{HAS_PARAMETERS}', (json.params.length == 0) ? 'hide-element':'')
+		.set('{RETURNS}', Utils.escapeHtml(json.returns))
+		.build();
 	functions.push({ 'name': name, 'elm': element });
 	return element;
 }
@@ -157,29 +159,26 @@ function makeParameters(params) {
 			}
 		}
 		
-		result += '<li><span><strong>' + escapeHtml(name) + '</strong> ( ' + stringifyParam(param, true) + ' )</span></li>'
+		result += '<li><span><strong>' + Utils.escapeHtml(name) + '</strong> ( ' + stringifyParam(param) + ' )</span></li>'
 	}
 	
 	result += '</ul>';
 	return result;
 }
 
-function stringifyParam(param, allowMultiple) {
-	let name = param.name;
+function stringifyParam(param) {
 	let types = param.type;
-	
-	if(name) {
-		return '<code class="declparam">' + escapeHtml(name) + '</code>';
-	} else if(types.length == 1) {
-		return '<code class="declparam">' + escapeHtml(types) + '</code>';
+
+	if(types.length == 1) {
+		return '<code class="declparam">' + Utils.escapeHtml(types) + '</code>';
 	}
 	
-	return '<span class="declparam-table"><code class="declparam">' + escapeHtml(types) + '</code></span>';
+	return '<span class="declparam-table"><code class="declparam">' + Utils.escapeHtml(types) + '</code></span>';
 }
 
 function makeDeclparams(params) {
 	let result = '';
-	for(let i = 0; i < params.length; i++) {
+	for(let i in params) {
 		result += stringifyParam(params[i]);
 	}
 	return result;
@@ -216,7 +215,6 @@ function class_list_search(value) {
 
 	if(!found) {
 		filter = filter.trim();
-		console.log('Function search');
 
 		for(let i = 0; i < packages.length; i++) {
 			let obj = packages[i];
@@ -227,7 +225,6 @@ function class_list_search(value) {
 
 		for(let i = 0; i < functions.length; i++) {
 			let obj = functions[i];
-
 			let txt = obj.name;
 			if(txt) {
 				if(txt.toUpperCase().indexOf(filter) > -1) {

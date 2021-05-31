@@ -113,6 +113,10 @@ code.declparam {
 	font-size: 0.9em;
 }
 
+code.declname {
+	font-size: 13px;
+}
+
 
 span.declparameters:before {
 	content: ' ( ';
@@ -122,7 +126,14 @@ span.declparameters:after {
 	content: ' )';
 }
 
-
+span.declparameters code.declparam, span.decllink {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 
 #td-container {
@@ -139,16 +150,18 @@ th {
 }
 
 span.decllink {
-	color: #e4ec6b;
-	font-size: 0.8em;
+	content: url('/images/pragma.svg');
 	float: right;
-	margin-top: 0.2em;
-	height: 20px;
+	margin-top: 4px;
+	height: 16px;
 	cursor: pointer;
+	opacity: 0.7;
+	transition: 0.2s;
 }
 
-span.decllink:after {
-	content: 'link';
+span.decllink:hover {
+	opacity: 1;
+	transition: 0.2s;
 }
 
 h2.userdata-header, h2.tabledata-header {

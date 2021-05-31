@@ -4,6 +4,7 @@ body {
 	overflow-x: hidden;
 	color: white;
 	margin: 0;
+	font-size: 16px;
 }
 
 p {
@@ -44,6 +45,7 @@ canvas {
 	width: 100%;
 	top: 0;
 	left: 0;
+	z-index: 9999;
 }
 
 .navigation-bar {
@@ -100,7 +102,7 @@ canvas {
 	overflow: hidden;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
 	.horizontal-card {
 		display: inherit;
 		margin-bottom: 10px;
@@ -137,8 +139,8 @@ canvas {
 	}
 	
 	.box, .box-2, .box-3, .box-4 {
-		width: 100%;
-		max-width: -moz-available !important;
+		/* width: 100%; */
+		max-width: -moz-available;
 		max-width: -webkit-fill-available;
 	}
 }

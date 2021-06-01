@@ -25,13 +25,15 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "start",
+							"description": "The start position."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "end",
+							"description": "The end position."
 						},
 						{
 							"type": [
@@ -40,7 +42,8 @@
 								"harvestable",
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body to be ignored. (Optional)"
 						},
 						{
 							"type": [
@@ -60,13 +63,15 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "start",
+							"description": "The start position."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "direction",
+							"description": "The ray's direction and length."
 						}
 					],
 					"returns": [],
@@ -83,13 +88,15 @@
 								"character",
 								"shape"
 							],
-							"name": ""
+							"name": "target",
+							"description": "The character on which the impulse is exerted on."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "impulse",
+							"description": "The direction and strength of the impulse."
 						},
 						{
 							"type": [
@@ -116,19 +123,22 @@
 								"userdata",
 								"body"
 							],
-							"name": ""
+							"name": "target",
+							"description": "The object on which the torque is exerted on."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "torque",
+							"description": "The direction and strength of the torque."
 						},
 						{
 							"type": [
 								"number"
 							],
-							"name": ""
+							"name": "global",
+							"description": "Whether the torque is applied in global coordinates. (Defaults to local rotation)"
 						}
 					],
 					"returns": [],
@@ -142,46 +152,53 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The center point of the explosion."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
+							"name": "level",
+							"description": "The destruction level affecting nearby objects."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "destructionRadius",
+							"description": "The destruction radius. Objects inside this sphere may be destroyed."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "impulseRadius",
+							"description": "The impulse radius. Objects inside this sphere are affected by an impulse."
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": "magnitude",
+							"description": "The impulse strength of the explosion. The strength diminishes with distance."
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "effectName",
+							"description": "The name of the effect to be played upon explosion. (Optional)"
 						},
 						{
 							"type": [
-								"unknown"
+								"shape"
 							],
-							"name": ""
+							"name": "ignoreShape",
+							"description": "The shape to be ignored. (Optional)"
 						},
 						{
 							"type": [
@@ -202,7 +219,8 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "gravity",
+							"description": "The gravitational value."
 						}
 					],
 					"returns": [],
@@ -447,7 +465,8 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						}
 					],
 					"returns": [],
@@ -462,14 +481,16 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
 						}
 					],
 					"returns": [],
@@ -481,21 +502,31 @@
 					"params": [
 						{
 							"type": [
-								"integer"
+								"number"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						},
 						{
 							"type": [
-								"integer"
+								"number"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "octaves",
+							"description": "The octaves."
+						},
+						{
+							"type": [
+								"int"
+							],
+							"name": "seed",
+							"description": "The seed."
 						}
 					],
 					"returns": [],
@@ -510,14 +541,23 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
+						},
+						{
+							"type": [
+								"int"
+							],
+							"name": "seed",
+							"description": "The seed."
 						}
 					],
 					"returns": [],
@@ -559,26 +599,30 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "octaves",
+							"description": "The octaves."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "seed",
+							"description": "The seed."
 						}
 					],
 					"returns": [],
@@ -593,14 +637,16 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "a",
+							"description": "The lower bound."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "b",
+							"description": "The upper bound."
 						}
 					],
 					"returns": [],
@@ -615,14 +661,16 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "mean",
+							"description": "The mean."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "deviation",
+							"description": "The deviation."
 						}
 					],
 					"returns": [],
@@ -636,14 +684,16 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "direction",
+							"description": "The direction."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "spreadAngle",
+							"description": "The spread angle in degrees."
 						}
 					],
 					"returns": [],
@@ -664,21 +714,24 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "lower",
+							"description": "The lower limit."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "upper",
+							"description": "The upper limit."
 						}
 					],
 					"returns": [],
@@ -693,21 +746,24 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x0",
+							"description": "The first value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x1",
+							"description": "The second value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "t",
+							"description": "The interpolation step."
 						}
 					],
 					"returns": [],
@@ -722,28 +778,32 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "c0",
+							"description": "The start value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "c1",
+							"description": "The control point."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "c2",
+							"description": "The end value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "t",
+							"description": "The interpolation step."
 						}
 					],
 					"returns": [],
@@ -758,35 +818,40 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "c0",
+							"description": "The start value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "c1",
+							"description": "The first control point."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "c2",
+							"description": "The second control point."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "c3",
+							"description": "The end value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "t",
+							"description": "The interpolation step."
 						}
 					],
 					"returns": [],
@@ -798,15 +863,17 @@
 					"params": [
 						{
 							"type": [
-								"integer"
+								"number"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The number."
 						},
 						{
 							"type": [
-								"integer"
+								"number"
 							],
-							"name": ""
+							"name": "n",
+							"description": "The modulo value."
 						}
 					],
 					"returns": [],
@@ -821,21 +888,24 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "edge0",
+							"description": "The value of the lower edge of the Hermite function."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "edge1",
+							"description": "The value of the upper edge of the Hermite function."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The source value for interpolation."
 						}
 					],
 					"returns": [],
@@ -850,21 +920,24 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "edge0",
+							"description": "The value of the lower edge of the Hermite function."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "edge1",
+							"description": "The value of the upper edge of the Hermite function."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The source value for interpolation."
 						}
 					],
 					"returns": [],
@@ -884,7 +957,8 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The projectile's name."
 						}
 					],
 					"returns": [],
@@ -898,37 +972,43 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The projectile's name."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The start position."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "velocity",
+							"description": "The direction and velocity."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "fakePosThird",
+							"description": "The visual start position in third-person. (Defaults to position)"
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "fakePosFirst",
+							"description": "The visual start position in first-person. (Defaults to position)"
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "delay",
+							"description": "The number of ticks before firing. (Defaults to 0)"
 						}
 					],
 					"returns": [],
@@ -942,31 +1022,36 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The projectile's name."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The start position."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "velocity",
+							"description": "The direction and velocity."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "delay",
+							"description": "The number of ticks before firing. (Defaults to 0)"
 						}
 					],
 					"returns": [],
@@ -1780,21 +1865,24 @@
 					"params": [
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X-coordinate"
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y-coordinate"
 						},
 						{
 							"type": [
 								"uuid"
 							],
-							"name": ""
+							"name": "uuid",
+							"description": "The uuid of the interactable(s)"
 						}
 					],
 					"returns": [],
@@ -2037,7 +2125,8 @@
 								"string",
 								"number"
 							],
-							"name": ""
+							"name": "channel",
+							"description": "The channel number."
 						},
 						{
 							"type": [
@@ -2045,7 +2134,8 @@
 								"string",
 								"number"
 							],
-							"name": ""
+							"name": "data",
+							"description": "The data to be stored."
 						}
 					],
 					"returns": [],
@@ -2061,7 +2151,8 @@
 								"string",
 								"number"
 							],
-							"name": ""
+							"name": "channel",
+							"description": "The channel number."
 						}
 					],
 					"returns": [],
@@ -2154,7 +2245,8 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "callbackMethod",
+							"description": "The function name in the game script."
 						},
 						{
 							"type": [
@@ -2162,7 +2254,8 @@
 								"string",
 								"number"
 							],
-							"name": ""
+							"name": "args",
+							"description": "Optional arguments to be sent to the game script."
 						}
 					],
 					"returns": [],
@@ -2176,13 +2269,15 @@
 							"type": [
 								"world"
 							],
-							"name": ""
+							"name": "world",
+							"description": "The world."
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "callbackMethod",
+							"description": "The function name in a world script."
 						},
 						{
 							"type": [
@@ -2190,7 +2285,8 @@
 								"string",
 								"number"
 							],
-							"name": ""
+							"name": "args",
+							"description": "Optional arguments to be sent to the world script."
 						}
 					],
 					"returns": [],
@@ -2877,16 +2973,18 @@
 					"params": [
 						{
 							"type": [
-								"uuid"
+								"int"
 							],
-							"name": ""
+							"name": "level",
+							"description": "The level's index."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "time",
+							"description": "The completion time."
 						},
 						{
 							"type": [
@@ -3082,7 +3180,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3096,7 +3195,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3110,7 +3210,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3122,15 +3223,17 @@
 					"params": [
 						{
 							"type": [
-								"shape"
+								"body"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						},
 						{
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color."
 						}
 					],
 					"returns": [],
@@ -3144,7 +3247,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3171,7 +3275,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3185,7 +3290,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3199,7 +3305,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3213,7 +3320,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3227,7 +3335,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3241,7 +3350,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3255,7 +3365,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3269,7 +3380,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3283,7 +3395,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3297,7 +3410,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3311,13 +3425,15 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The untransformed vector."
 						}
 					],
 					"returns": [],
@@ -3350,13 +3466,15 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quat",
+							"description": "The untransformed quaternion."
 						}
 					],
 					"returns": [],
@@ -3370,7 +3488,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3384,7 +3503,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3398,7 +3518,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3412,13 +3533,15 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "cs",
+							"description": "The part."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "attackLevel",
+							"description": "Determines which quality level of parts the attack can destroy. Setting it to 0 (default) will destroy any part."
 						}
 					],
 					"returns": [],
@@ -3432,7 +3555,8 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						}
 					],
 					"returns": [],
@@ -3446,31 +3570,36 @@
 							"type": [
 								"uuid"
 							],
-							"name": ""
+							"name": "uuid",
+							"description": "The uuid of the shape."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The shape's world position."
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The shape's world rotation."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "dynamic",
+							"description": "Set true if the shape is dynamic or false if the shape is static."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "forceSpawn",
+							"description": "Set true to force spawn the shape even if it will cause collision."
 						}
 					],
 					"returns": [],
@@ -3484,37 +3613,43 @@
 							"type": [
 								"uuid"
 							],
-							"name": ""
+							"name": "uuid",
+							"description": "The uuid of the shape."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "size",
+							"description": "The size of the block."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The shape's world position."
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The shape's world rotation."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "dynamic",
+							"description": "Set true if the shape is dynamic or false if the shape is static."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "forceSpawn",
+							"description": "Set true to force spawn the shape even if it will cause collision."
 						}
 					],
 					"returns": [],
@@ -3528,25 +3663,29 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The host shape."
 						},
 						{
 							"type": [
 								"uuid"
 							],
-							"name": ""
+							"name": "uuid",
+							"description": "The uuid of the joint."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The joint's grid position."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "direction",
+							"description": "The joint's normal direction."
 						}
 					],
 					"returns": [],
@@ -3625,13 +3764,15 @@
 							"type": [
 								"shape"
 							],
-							"name": ""
+							"name": "shape",
+							"description": "The shape."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "attackLevel",
+							"description": "Determines which quality level of shape the attack can destroy. Setting it to 0 (default) will destroy any shape."
 						}
 					],
 					"returns": [],
@@ -4366,7 +4507,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4393,7 +4535,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4407,7 +4550,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4421,7 +4565,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4435,7 +4580,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4449,7 +4595,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4463,7 +4610,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4477,7 +4625,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4505,13 +4654,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"integer"
+								"unsigned"
 							],
-							"name": ""
+							"name": "tick",
+							"description": "The tick."
 						}
 					],
 					"returns": [],
@@ -4604,7 +4755,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4618,7 +4770,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4645,7 +4798,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4659,13 +4813,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "value",
+							"description": "Whether the body is destructable."
 						}
 					],
 					"returns": [],
@@ -4679,7 +4835,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4693,13 +4850,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "value",
+							"description": "Whether the body is buildable."
 						}
 					],
 					"returns": [],
@@ -4713,7 +4872,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4727,13 +4887,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "value",
+							"description": "Whether the body is paintable."
 						}
 					],
 					"returns": [],
@@ -4747,7 +4909,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4761,13 +4924,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "value",
+							"description": "Whether the body is connectable."
 						}
 					],
 					"returns": [],
@@ -4781,7 +4946,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4795,13 +4961,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "value",
+							"description": "Whether the body is liftable."
 						}
 					],
 					"returns": [],
@@ -4815,7 +4983,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4829,13 +4998,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "value",
+							"description": "Whether the body is interactable."
 						}
 					],
 					"returns": [],
@@ -4849,7 +5020,8 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						}
 					],
 					"returns": [],
@@ -4863,13 +5035,15 @@
 							"type": [
 								"body"
 							],
-							"name": ""
+							"name": "body",
+							"description": "The body."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "value",
+							"description": "Whether the body is erasable."
 						}
 					],
 					"returns": [],
@@ -5575,7 +5749,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5589,7 +5764,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5603,7 +5779,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5617,7 +5794,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5631,7 +5809,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5645,7 +5824,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5659,7 +5839,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5673,13 +5854,15 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "signal",
+							"description": "The logic output signal."
 						}
 					],
 					"returns": [],
@@ -5693,7 +5876,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5707,14 +5891,16 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "signal",
+							"description": "The power output signal."
 						}
 					],
 					"returns": [],
@@ -5760,7 +5946,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5800,7 +5987,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5814,7 +6002,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5828,7 +6017,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
@@ -5848,7 +6038,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
@@ -5868,7 +6059,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5882,7 +6074,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5896,7 +6089,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -5910,13 +6104,15 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "index",
+							"description": "The index."
 						}
 					],
 					"returns": [],
@@ -5930,20 +6126,23 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "index",
+							"description": "The index."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "value",
+							"description": "The pose weight."
 						}
 					],
 					"returns": [],
@@ -5990,7 +6189,8 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						}
 					],
 					"returns": [],
@@ -6004,13 +6204,15 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "index",
+							"description": "The index."
 						}
 					],
 					"returns": [],
@@ -6043,20 +6245,23 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The name of the animation."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "progress",
+							"description": "The animation's progress between 0 and 1."
 						}
 					],
 					"returns": [],
@@ -6070,19 +6275,22 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The name of the animation."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "enabled",
+							"description": "The boolean enable state."
 						}
 					],
 					"returns": [],
@@ -6115,13 +6323,15 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The bone name."
 						}
 					],
 					"returns": [],
@@ -6135,13 +6345,15 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The bone name."
 						}
 					],
 					"returns": [],
@@ -6155,13 +6367,15 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "index",
+							"description": "The index of the container (default: 0)."
 						}
 					],
 					"returns": [],
@@ -7562,37 +7776,43 @@
 							"type": [
 								"joint"
 							],
-							"name": ""
+							"name": "joint",
+							"description": "The parent joint."
 						},
 						{
 							"type": [
 								"uuid"
 							],
-							"name": ""
+							"name": "uuid",
+							"description": "The uuid of the shape."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The shape's local position."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "z-axis",
+							"description": "The shape's local z direction."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "x-axis",
+							"description": "The shape's local x direction."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "forceCreate",
+							"description": "Set true to force create the shape."
 						}
 					],
 					"returns": [],
@@ -7606,31 +7826,36 @@
 							"type": [
 								"joint"
 							],
-							"name": ""
+							"name": "joint",
+							"description": "The parent joint."
 						},
 						{
 							"type": [
 								"uuid"
 							],
-							"name": ""
+							"name": "uuid",
+							"description": "The uuid of the shape."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "size",
+							"description": "The shape's size."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The shape's local position."
 						},
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "forceCreate",
+							"description": "Set true to force create the shape."
 						}
 					],
 					"returns": [],
@@ -7644,7 +7869,8 @@
 							"type": [
 								"joint"
 							],
-							"name": ""
+							"name": "joint",
+							"description": "The joint."
 						}
 					],
 					"returns": [],
@@ -7658,7 +7884,8 @@
 							"type": [
 								"joint"
 							],
-							"name": ""
+							"name": "joint",
+							"description": "The joint."
 						}
 					],
 					"returns": [],
@@ -7672,7 +7899,8 @@
 							"type": [
 								"joint"
 							],
-							"name": ""
+							"name": "joint",
+							"description": "The joint."
 						}
 					],
 					"returns": [],
@@ -7686,7 +7914,8 @@
 							"type": [
 								"joint"
 							],
-							"name": ""
+							"name": "joint",
+							"description": "The joint."
 						}
 					],
 					"returns": [],
@@ -7700,7 +7929,8 @@
 							"type": [
 								"joint"
 							],
-							"name": ""
+							"name": "joint",
+							"description": "The joint."
 						}
 					],
 					"returns": [],
@@ -7715,7 +7945,8 @@
 								"bearing",
 								"joint"
 							],
-							"name": ""
+							"name": "bearing",
+							"description": "The bearing."
 						}
 					],
 					"returns": [],
@@ -7730,7 +7961,8 @@
 								"bearing",
 								"joint"
 							],
-							"name": ""
+							"name": "bearing",
+							"description": "The bearing."
 						}
 					],
 					"returns": [],
@@ -7745,7 +7977,8 @@
 								"bearing",
 								"joint"
 							],
-							"name": ""
+							"name": "bearing",
+							"description": "The bearing."
 						}
 					],
 					"returns": [],
@@ -7760,7 +7993,8 @@
 								"bearing",
 								"joint"
 							],
-							"name": ""
+							"name": "bearing",
+							"description": "The bearing."
 						}
 					],
 					"returns": [],
@@ -7775,21 +8009,24 @@
 								"bearing",
 								"joint"
 							],
-							"name": ""
+							"name": "bearing",
+							"description": "The bearing."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "targetVelocity",
+							"description": "The target velocity."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "maxImpulse",
+							"description": "The max impulse."
 						}
 					],
 					"returns": [],
@@ -7804,28 +8041,32 @@
 								"bearing",
 								"joint"
 							],
-							"name": ""
+							"name": "bearing",
+							"description": "The bearing."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "targetAngle",
+							"description": "The target angle."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "targetVelocity",
+							"description": "The target velocity."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "maxImpulse",
+							"description": "The max impulse."
 						}
 					],
 					"returns": [],
@@ -7840,7 +8081,8 @@
 								"piston",
 								"joint"
 							],
-							"name": ""
+							"name": "piston",
+							"description": "The piston."
 						}
 					],
 					"returns": [],
@@ -7855,28 +8097,32 @@
 								"piston",
 								"joint"
 							],
-							"name": ""
+							"name": "bearing",
+							"description": "The bearing."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "targetLength",
+							"description": "The target length."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "targetVelocity",
+							"description": "The target velocity."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "maxImpulse",
+							"description": "The max impulse. (Defaults to impulse used in game)"
 						}
 					],
 					"returns": [],
@@ -8288,7 +8534,8 @@
 							"type": [
 								"container"
 							],
-							"name": ""
+							"name": "container",
+							"description": "The container."
 						}
 					],
 					"returns": [],
@@ -8315,25 +8562,29 @@
 							"type": [
 								"container"
 							],
-							"name": ""
+							"name": "container",
+							"description": "The container."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "slot",
+							"description": "The slot."
 						},
 						{
 							"type": [
 								"uuid"
 							],
-							"name": ""
+							"name": "itemUuid",
+							"description": "The uuid of the item."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "quantity",
+							"description": "The number of items."
 						},
 						{
 							"type": [
@@ -8353,13 +8604,15 @@
 							"type": [
 								"container"
 							],
-							"name": ""
+							"name": "container",
+							"description": "The container."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "slot",
+							"description": "The slot."
 						}
 					],
 					"returns": [],
@@ -8386,13 +8639,15 @@
 							"type": [
 								"container"
 							],
-							"name": ""
+							"name": "container",
+							"description": "The container."
 						},
 						{
 							"type": [
-								"integer"
+								"unsigned"
 							],
-							"name": ""
+							"name": "tick",
+							"description": "The tick."
 						}
 					],
 					"returns": [],
@@ -8406,7 +8661,8 @@
 							"type": [
 								"container"
 							],
-							"name": ""
+							"name": "container",
+							"description": "The container."
 						}
 					],
 					"returns": [],
@@ -10057,28 +10313,32 @@
 					"params": [
 						{
 							"type": [
-								"unknown"
+								"player"
 							],
-							"name": ""
+							"name": "player",
+							"description": "The player controlling the character."
 						},
 						{
 							"type": [
 								"world"
 							],
-							"name": ""
+							"name": "world",
+							"description": "The world the character is created in."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The world position of the character."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "character",
+							"description": "The old character to inherit from (Optional)."
 						},
 						{
 							"type": [
@@ -11033,9 +11293,10 @@
 					"params": [
 						{
 							"type": [
-								"unknown"
+								"player"
 							],
-							"name": ""
+							"name": "player",
+							"description": "The player to own the lift."
 						},
 						{
 							"type": [
@@ -11047,19 +11308,22 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The lift position."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "level",
+							"description": "The lift level."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The rotation of the creation on the lift."
 						}
 					],
 					"returns": [],
@@ -11068,7 +11332,15 @@
 				"removeLift": {
 					"args": -1,
 					"sandbox": "serverMethod",
-					"params": [],
+					"params": [
+						{
+							"type": [
+								"player"
+							],
+							"name": "player",
+							"description": "The player that owns the lift."
+						}
+					],
 					"returns": [],
 					"description": "Remove the player's lift, if the lift exists."
 				}
@@ -11795,25 +12067,29 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "dimension",
+							"description": "The dimensions of the box."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The world position."
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The world rotation."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "filter",
+							"description": "The object types the area trigger may detect. (See sm.areaTrigger.filter)"
 						},
 						{
 							"type": [
@@ -11866,31 +12142,36 @@
 							"type": [
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The host interactable"
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "dimension",
+							"description": "The size of the box"
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The position offset"
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The rotation offset"
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "filter",
+							"description": "The object types the area trigger may detect. (See sm.areaTrigger.filter)"
 						},
 						{
 							"type": [
@@ -11910,9 +12191,10 @@
 					"params": [
 						{
 							"type": [
-								"areatrigger"
+								"areaTrigger"
 							],
-							"name": ""
+							"name": "areaTrigger",
+							"description": "The area trigger to be destroyed."
 						}
 					],
 					"returns": [],
@@ -12663,21 +12945,24 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "z",
+							"description": "The Z value."
 						}
 					],
 					"returns": [],
@@ -12705,7 +12990,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						}
 					],
 					"returns": [],
@@ -12719,14 +13005,16 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						}
 					],
 					"returns": [],
@@ -12740,7 +13028,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						}
 					],
 					"returns": [],
@@ -12754,14 +13043,16 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
 						}
 					],
 					"returns": [],
@@ -12775,7 +13066,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						}
 					],
 					"returns": [],
@@ -12789,14 +13081,16 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "z",
+							"description": "The Z value."
 						}
 					],
 					"returns": [],
@@ -12810,7 +13104,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						}
 					],
 					"returns": [],
@@ -12824,13 +13119,15 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector1",
+							"description": "The first vector."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector2",
+							"description": "The second vector."
 						}
 					],
 					"returns": [],
@@ -12844,13 +13141,15 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector1",
+							"description": "The first vector."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector2",
+							"description": "The second vector."
 						}
 					],
 					"returns": [],
@@ -12864,7 +13163,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						}
 					],
 					"returns": [],
@@ -12878,7 +13178,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						}
 					],
 					"returns": [],
@@ -12892,20 +13193,23 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector1",
+							"description": "The first vector."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector2",
+							"description": "The second vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "t",
+							"description": "Interpolation amount between the two inputs."
 						}
 					],
 					"returns": [],
@@ -12989,14 +13293,16 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "angle",
+							"description": "The angle."
 						}
 					],
 					"returns": [],
@@ -13010,14 +13316,16 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "angle",
+							"description": "The angle."
 						}
 					],
 					"returns": [],
@@ -13031,14 +13339,16 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "angle",
+							"description": "The angle."
 						}
 					],
 					"returns": [],
@@ -13052,20 +13362,23 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "angle",
+							"description": "The angle."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "normal",
+							"description": "The axis to be rotated around."
 						}
 					],
 					"returns": [],
@@ -13079,13 +13392,15 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector1",
+							"description": "The first vector."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector2",
+							"description": "The second vector."
 						}
 					],
 					"returns": [],
@@ -13099,7 +13414,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "vector",
+							"description": "The vector."
 						}
 					],
 					"returns": [],
@@ -13472,28 +13788,32 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "z",
+							"description": "The Z value."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "w",
+							"description": "The W value."
 						}
 					],
 					"returns": [],
@@ -13534,7 +13854,8 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						}
 					],
 					"returns": [],
@@ -13548,14 +13869,16 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "x",
+							"description": "The X value."
 						}
 					],
 					"returns": [],
@@ -13569,7 +13892,8 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						}
 					],
 					"returns": [],
@@ -13583,14 +13907,16 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "y",
+							"description": "The Y value."
 						}
 					],
 					"returns": [],
@@ -13604,7 +13930,8 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						}
 					],
 					"returns": [],
@@ -13618,14 +13945,16 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "z",
+							"description": "The Z value."
 						}
 					],
 					"returns": [],
@@ -13639,7 +13968,8 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						}
 					],
 					"returns": [],
@@ -13653,14 +13983,16 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "w",
+							"description": "The W value."
 						}
 					],
 					"returns": [],
@@ -13674,7 +14006,8 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion",
+							"description": "The quaternion."
 						}
 					],
 					"returns": [],
@@ -13688,13 +14021,15 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "at",
+							"description": "The forward vector."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "up",
+							"description": "The up vector."
 						}
 					],
 					"returns": [],
@@ -13708,20 +14043,23 @@
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion1",
+							"description": "The first quaternion."
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "quaternion2",
+							"description": "The second quaternion."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "t",
+							"description": "Interpolation amount between the two inputs."
 						}
 					],
 					"returns": [],
@@ -13819,7 +14157,8 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "uuid",
+							"description": "The string to generate an uuid instance from. If none is provided, generate a random uuid."
 						}
 					],
 					"returns": [],
@@ -13919,7 +14258,8 @@
 								"string",
 								"number"
 							],
-							"name": ""
+							"name": "hexInt",
+							"description": "The hex value."
 						},
 						{
 							"type": [
@@ -13954,7 +14294,8 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						}
 					],
 					"returns": [],
@@ -13968,7 +14309,8 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						}
 					],
 					"returns": [],
@@ -13982,7 +14324,8 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						}
 					],
 					"returns": [],
@@ -13996,7 +14339,8 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						}
 					],
 					"returns": [],
@@ -14010,14 +14354,16 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "r",
+							"description": "The red value."
 						}
 					],
 					"returns": [],
@@ -14031,14 +14377,16 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "g",
+							"description": "The green value."
 						}
 					],
 					"returns": [],
@@ -14052,14 +14400,16 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "b",
+							"description": "The blue value."
 						}
 					],
 					"returns": [],
@@ -14073,14 +14423,16 @@
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The color object."
 						},
 						{
 							"type": [
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "a",
+							"description": "The alpha value."
 						}
 					],
 					"returns": [],
@@ -16324,25 +16676,29 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "particle",
+							"description": "The particle name."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The position."
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The rotation. (Defaults to no rotation)"
 						},
 						{
 							"type": [
 								"color"
 							],
-							"name": ""
+							"name": "color",
+							"description": "The blend color. (Defaults to white)"
 						}
 					],
 					"returns": [],
@@ -16362,25 +16718,29 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The name."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The position."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "velocity",
+							"description": "The velocity. (Defaults to no velocity)"
 						},
 						{
 							"type": [
 								"quat"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The rotation. (Defaults to no rotation)"
 						},
 						{
 							"type": [
@@ -16437,20 +16797,23 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The name."
 						},
 						{
 							"type": [
 								"character",
 								"interactable"
 							],
-							"name": ""
+							"name": "interactable",
+							"description": "The interactable the effect is attached to. (Optional)"
 						},
 						{
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "name",
+							"description": "The bone name. (Optional)"
 						}
 					],
 					"returns": [],
@@ -16776,13 +17139,15 @@
 							"type": [
 								"string"
 							],
-							"name": ""
+							"name": "sound",
+							"description": "The sound to play."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The world position of the sound. (Optional)"
 						}
 					],
 					"returns": [],
@@ -16852,19 +17217,22 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "range",
+							"description": "The maximum range."
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "origin",
+							"description": "The start position. (Defaults to getRaycastStart)"
 						},
 						{
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "direction",
+							"description": "The direction. (Defaults to getDirection)"
 						}
 					],
 					"returns": [],
@@ -17118,7 +17486,8 @@
 								"number",
 								"string"
 							],
-							"name": ""
+							"name": "strength",
+							"description": "The camera shake strength."
 						}
 					],
 					"returns": [],
@@ -17259,13 +17628,15 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "The lift position."
 						},
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "rotation",
+							"description": "The rotation of the creation on the lift."
 						}
 					],
 					"returns": [],
@@ -18056,9 +18427,10 @@
 					"params": [
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "visible",
+							"description": "Wheter the creation visualization is visible"
 						}
 					],
 					"returns": [],
@@ -18070,9 +18442,10 @@
 					"params": [
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "valid",
+							"description": "Wheter the visualization should render as valid"
 						}
 					],
 					"returns": [],
@@ -18084,9 +18457,10 @@
 					"params": [
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "valid",
+							"description": "Wheter the visualization should use free placement"
 						}
 					],
 					"returns": [],
@@ -18100,7 +18474,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "World position of the visualization"
 						}
 					],
 					"returns": [],
@@ -18112,9 +18487,10 @@
 					"params": [
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "index",
+							"description": "Index to rotate the visualization with"
 						}
 					],
 					"returns": [],
@@ -18128,7 +18504,8 @@
 							"type": [
 								"vec3"
 							],
-							"name": ""
+							"name": "position",
+							"description": "World position of the lift visualization"
 						}
 					],
 					"returns": [],
@@ -18140,9 +18517,10 @@
 					"params": [
 						{
 							"type": [
-								"integer"
+								"int"
 							],
-							"name": ""
+							"name": "level",
+							"description": "The level of the lift"
 						}
 					],
 					"returns": [],
@@ -18154,9 +18532,10 @@
 					"params": [
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "visible",
+							"description": "Whether the lift visualization is visible"
 						}
 					],
 					"returns": [],
@@ -18168,9 +18547,10 @@
 					"params": [
 						{
 							"type": [
-								"number"
+								"bool"
 							],
-							"name": ""
+							"name": "valid",
+							"description": "Whether the visualization should render as valid"
 						}
 					],
 					"returns": [],

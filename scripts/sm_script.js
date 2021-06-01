@@ -174,8 +174,12 @@ function makeParameters(params) {
 	return result;
 }
 
-function stringifyParam(param) {
+function stringifyParam(param, allowName) {
 	let types = param.type;
+
+	if(param.name && allowName) {
+		return '<code class="declparam">' + Utils.escapeHtml(param.name) + '</code>';
+	}
 
 	if(types.length == 1) {
 		return '<code class="declparam">' + Utils.escapeHtml(types) + '</code>';
@@ -187,7 +191,7 @@ function stringifyParam(param) {
 function makeDeclparams(params) {
 	let result = '';
 	for(let i in params) {
-		result += stringifyParam(params[i]);
+		result += stringifyParam(params[i], true);
 	}
 	return result;
 }

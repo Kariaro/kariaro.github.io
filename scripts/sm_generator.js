@@ -43,6 +43,7 @@ function copyPragmalink(elm) {
 	el.select();
 	document.execCommand('copy');
 	document.body.removeChild(el);
+	window.location.hash = '#' + key;
 }
 
 function getHashNamespace(hash) {

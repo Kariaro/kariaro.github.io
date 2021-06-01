@@ -54,15 +54,16 @@
 								<div id="td-func-template"><br><br>
 									<dl>
 										<dt>
-											<code class="declsandbox">{DECLSANDBOX}</code>
-											<code class="declname">{DECLNAME}</code><span class="declparameters">{DECLPARAMS}</span>
+											<span class="declseparator"><code class="declsandbox">{DECLSANDBOX}</code></span>
+											<span class="declseparator"><code class="declname">{DECLNAME}</code></span>
+											<span class="declparameters">{DECLPARAMS}</span>
 											<span class="decllink" onclick="copyPragmalink(event.target)"></span>
 										</dt>
 										<dd>
 											<p>{DESCRIPTION}</p>
 											<table style="margin-left: 10px;"><tbody>
 												<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
-												<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
+												<tr class="{HAS_RETURNS}"><th>Returns:</th><td>{RETURNS}</td></tr>
 											</tbody></table>
 										</dd>
 									</dl>
@@ -73,14 +74,16 @@
 								<div id="ud-func-template"><br><br>
 									<dl>
 										<dt class="ud-func">
-											<code class="declsandbox">{DECLSANDBOX}</code>
-											<code class="declname">{DECLNAME}</code><span class="declparameters">{DECLPARAMS}</span><span class="decllink" onclick="copyPragmalink(event.target)"></span>
+											<span class="declseparator"><code class="declsandbox">{DECLSANDBOX}</code></span>
+											<span class="declseparator"><code class="declname">{DECLNAME}</code></span>
+											<span class="declparameters">{DECLPARAMS}</span>
+											<span class="decllink" onclick="copyPragmalink(event.target)"></span>
 										</dt>
 										<dd>
 											<p>{DESCRIPTION}</p>
 											<table style="margin-left: 10px;"><tbody>
 												<tr class="{HAS_PARAMETERS}"><th>Parameters:</th><td>{PARAMETERS}</td></tr>
-												<tr class="hide-element"><th>Returns:</th><td>{RETURNS}</td></tr>
+												<tr class="{HAS_RETURNS}"><th>Returns:</th><td>{RETURNS}</td></tr>
 											</tbody></table>
 										</dd>
 									</dl>

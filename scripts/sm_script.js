@@ -56,7 +56,7 @@ function makePackage(json) {
 		let value = getHashNamespace(hash);
 		select_class(value);
 		window.location.hash = '#';
-		window.location.hash = '#' + hash;
+		window.location.hash = '#' + hash.toLowerCase();
 	}
 }
 
@@ -129,7 +129,7 @@ function makeFunction(element, path, is_userdata, name, json) {
 	}
 	
 	let decl_name = Utils.escapeHtml(path + (is_userdata ? ':':'.') + name);
-	element.id = decl_name;
+	element.id = decl_name.toLowerCase();
 	let decl_desc = '';
 	if('description' in json) {
 		if(marked) {
@@ -145,7 +145,9 @@ function makeFunction(element, path, is_userdata, name, json) {
 		.set('{DECLPARAMS}', makeDeclparams(json.params))
 		.set('{DECLNAME}', decl_name)
 		.set('{PARAMETERS}', makeParameters(json.params))
+		.set('{RETURNS}', makeParameters(json.returns))
 		.set('{HAS_PARAMETERS}', (json.params.length == 0) ? 'hide-element':'')
+		.set('{HAS_RETURNS}', (json.returns.length == 0) ? 'hide-element':'')
 		.set('{RETURNS}', Utils.escapeHtml(json.returns))
 		.build();
 	functions.push({ 'name': name, 'elm': element });
@@ -166,8 +168,17 @@ function makeParameters(params) {
 				name = 'any';
 			}
 		}
-		
-		result += '<li><span><strong>' + Utils.escapeHtml(name) + '</strong> ( ' + stringifyParam(param) + ' )</span></li>'
+
+		let docs = '';
+		if(param.description) {
+			if(marked) {
+				docs = marked(param.description);
+			} else {
+				docs = Utils.escapeHtml(param.description);
+			}
+		}
+
+		result += '<li><span><strong class="parameters-strong">' + Utils.escapeHtml(name) + ':</strong>' + stringifyParam(param) + '</span><span>' + docs + '</span></li>'
 	}
 	
 	result += '</ul>';

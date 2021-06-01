@@ -52,7 +52,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {bool, raycastResult}"
+							],
+							"description": "2 values: whether raycast was successful; the raycast result data."
+						}
+					],
 					"description": "Performs a [ray cast](https://en.wikipedia.org/wiki/Ray_casting) between two positions.\n\nThe returned [`raycastResult`](#userdata.raycastresult \"userdata.raycastresult\") contains information about any object intersected by the ray.\n\nIf the ray cast is called from within a shape (e.g. a Sensor), a [`body`](#userdata.body \"userdata.body\") may be provided which the ray will not intersect."
 				},
 				"distanceRaycast": {
@@ -74,7 +81,14 @@
 							"description": "The ray's direction and length."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {bool, number}"
+							],
+							"description": "2 values: whether raycast was successful; the fraction (0\u20131) of the distance reached until collision divided by the ray's length."
+						}
+					],
 					"description": "Performs a distance [ray cast](https://en.wikipedia.org/wiki/Ray_casting) from a position with a given direction.\n\nNote\n\n[`sm.physics.distanceRaycast`](#sm.physics.distanceraycast \"sm.physics.distanceraycast\") is generally cheaper to use than [`sm.physics.raycast`](#sm.physics.raycast \"sm.physics.raycast\") as it performs collision checks in a simplified world. If the raycast is only used for checking collision, it is adviced to use this method instead."
 				},
 				"applyImpulse": {
@@ -230,7 +244,14 @@
 					"args": -1,
 					"sandbox": "serverMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The gravitational value."
+						}
+					],
 					"description": "Returns the gravitational acceleration affecting [`shapes`](#userdata.shape \"userdata.shape\") and [`bodies`](#userdata.body \"userdata.body\")."
 				},
 				"getGroundMaterial": {
@@ -469,7 +490,14 @@
 							"description": "The X value."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The noise value."
+						}
+					],
 					"description": "A simplex noise 1d function."
 				},
 				"simplexNoise2d": {
@@ -493,7 +521,14 @@
 							"description": "The Y value."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The noise value."
+						}
+					],
 					"description": "A simplex noise 2d function."
 				},
 				"intNoise2d": {
@@ -529,7 +564,14 @@
 							"description": "The seed."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The noise value."
+						}
+					],
 					"description": "An integer noise 2d function."
 				},
 				"floatNoise2d": {
@@ -560,7 +602,14 @@
 							"description": "The seed."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The noise value."
+						}
+					],
 					"description": "A float noise 2d function."
 				},
 				"perlinNoise2d": {
@@ -625,7 +674,14 @@
 							"description": "The seed."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The noise value."
+						}
+					],
 					"description": "An octave noise 2d function."
 				},
 				"randomRange": {
@@ -649,7 +705,14 @@
 							"description": "The upper bound."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The random value."
+						}
+					],
 					"description": "Returns a random number N such that `a <= N <= b`."
 				},
 				"randomNormalDistribution": {
@@ -673,7 +736,14 @@
 							"description": "The deviation."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The random number."
+						}
+					],
 					"description": "Returns a random number according to the [normal random number distribution](https://en.wikipedia.org/wiki/Normal_distribution).\n\nValues near the **mean** are the most likely.\n\nStandard **deviation** affects the dispersion of generated values from the mean."
 				},
 				"gunSpread": {
@@ -696,7 +766,14 @@
 							"description": "The spread angle in degrees."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The spread direction."
+						}
+					],
 					"description": "Returns a directional vector with a random spread given by a [`normal distribution`](#sm.noise.randomnormaldistribution \"sm.noise.randomnormaldistribution\")."
 				}
 			},
@@ -734,7 +811,14 @@
 							"description": "The upper limit."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The clamped value."
+						}
+					],
 					"description": "Restricts a value to a given range."
 				},
 				"lerp": {
@@ -766,7 +850,14 @@
 							"description": "The interpolation step."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The interpolated value between two values."
+						}
+					],
 					"description": "Linear interpolation between two values. This is known as a lerp."
 				},
 				"bezier2": {
@@ -806,7 +897,14 @@
 							"description": "The interpolation step."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The interpolated value between two values."
+						}
+					],
 					"description": "Quadratic Bezier interpolation. One dimensional bezier curve."
 				},
 				"bezier3": {
@@ -854,7 +952,14 @@
 							"description": "The interpolation step."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The interpolated value between two values."
+						}
+					],
 					"description": "Cubic Bezier interpolation. One dimensional bezier curve."
 				},
 				"positiveModulo": {
@@ -876,7 +981,14 @@
 							"description": "The modulo value."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The value."
+						}
+					],
 					"description": "Returns the positive remainder after division of x by n."
 				},
 				"smoothstep": {
@@ -908,7 +1020,14 @@
 							"description": "The source value for interpolation."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The value."
+						}
+					],
 					"description": "Performs smooth Hermite interpolation between 0 and 1 when `edge0 < x < edge1`. This is useful in cases where a threshold function with a smooth transition is desired."
 				},
 				"smootherstep": {
@@ -940,7 +1059,14 @@
 							"description": "The source value for interpolation."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The value."
+						}
+					],
 					"description": "An improved version of the [`smoothstep`](#sm.util.smoothstep \"sm.util.smoothstep\") function which has zero 1st and 2nd order derivatives at `x = edge0` and `x = edge1`."
 				}
 			},
@@ -961,7 +1087,14 @@
 							"description": "The projectile's name."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The mass."
+						}
+					],
 					"description": "Returns the mass of a projectile."
 				},
 				"playerFire": {
@@ -1468,7 +1601,14 @@
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The tick."
+						}
+					],
 					"description": "Return the current game tick"
 				},
 				"setLimitedInventory": {
@@ -1885,7 +2025,14 @@
 							"description": "The uuid of the interactable(s)"
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {interactable}"
+							],
+							"description": "A table of found interactables with matching uuid"
+						}
+					],
 					"description": "Returns all [`interactables`](#sm.interactable \"sm.interactable\") of a given type for a cell coordinate."
 				},
 				"getInteractablesByAnyUuid": {
@@ -2155,7 +2302,12 @@
 							"description": "The channel number."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [],
+							"description": "The data stored."
+						}
+					],
 					"description": "Loads Lua data stored at a given channel. A _channel_ can be any integer, and acts as the location the data is stored at.\n\nIf no data is stored at the given channel, this returns nil."
 				}
 			},
@@ -2964,7 +3116,14 @@
 					"args": -1,
 					"sandbox": "serverMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the challenge has started."
+						}
+					],
 					"description": "Check if a challenge has started"
 				},
 				"levelCompleted": {
@@ -3184,7 +3343,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The shape's id."
+						}
+					],
 					"description": "Returns the id of a shape."
 				},
 				"getShapeUuid": {
@@ -3199,7 +3365,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"uuid"
+							],
+							"description": "The shape's uuid."
+						}
+					],
 					"description": "Returns the uuid string unique to a shape/block type."
 				},
 				"getColor": {
@@ -3214,7 +3387,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"color"
+							],
+							"description": "The shape's color."
+						}
+					],
 					"description": "Returns the color of a shape."
 				},
 				"setColor": {
@@ -3251,7 +3431,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The shape's mass."
+						}
+					],
 					"description": "Returns the mass of a shape."
 				},
 				"getBuoyancy": {
@@ -3279,7 +3466,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"string"
+							],
+							"description": "The shape's material."
+						}
+					],
 					"description": "Returns the material of a shape."
 				},
 				"getWorldPosition": {
@@ -3294,7 +3488,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's world position."
+						}
+					],
 					"description": "Returns the world position of a shape."
 				},
 				"getLocalPosition": {
@@ -3309,7 +3510,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's local position."
+						}
+					],
 					"description": "Returns the local grid postition of a shape."
 				},
 				"getVelocity": {
@@ -3324,7 +3532,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's linear velocity."
+						}
+					],
 					"description": "Returns the linear velocity of a shape."
 				},
 				"getXAxis": {
@@ -3339,7 +3554,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's x-axis."
+						}
+					],
 					"description": "Returns the local x-axis vector of a shape."
 				},
 				"getYAxis": {
@@ -3354,7 +3576,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's y-axis."
+						}
+					],
 					"description": "Returns the local y-axis vector of a shape."
 				},
 				"getZAxis": {
@@ -3369,7 +3598,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's z-axis."
+						}
+					],
 					"description": "Returns the local z-axis vector of a shape."
 				},
 				"getAt": {
@@ -3384,7 +3620,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's at-axis."
+						}
+					],
 					"description": "Returns the direction of a shape's front side.\n\nThe direction is affected by the shape's rotation in the world."
 				},
 				"getRight": {
@@ -3399,7 +3642,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's right-axis."
+						}
+					],
 					"description": "Returns the direction of a shape's right side.\n\nThe direction is affected by the shape's rotation in the world."
 				},
 				"getUp": {
@@ -3414,7 +3664,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The shape's up-axis."
+						}
+					],
 					"description": "Returns the direction of a shape's top side.\n\nThe direction is affected by the shape's rotation in the world."
 				},
 				"transformPoint": {
@@ -3436,7 +3693,14 @@
 							"description": "The untransformed vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The transformed vector."
+						}
+					],
 					"description": "Transform a [`vec3`](#userdata.vec3 \"userdata.vec3\") with the local shape transform.\n\nlocal localPos \\= self.shape:transformPoint( worldPos )"
 				},
 				"transformLocalPoint": {
@@ -3477,7 +3741,14 @@
 							"description": "The untransformed quaternion."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "The transformed quaternion."
+						}
+					],
 					"description": "Transform a [`quat`](#userdata.quat \"userdata.quat\") with the local shape transform.\n\nlocal worldUp \\= sm.vec3.new( 0, 0, 1 )\nlocal worldRot \\= sm.vec3.getRotation( worldUp, worldDir )\nlocal localRot \\= self.shape:transformRotation( worldRot )"
 				},
 				"getBoundingBox": {
@@ -3492,8 +3763,15 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
-					"description": "Returns the bounding box of a shape \u00E2\u20AC\u201C the dimensions that a shape occupies when building."
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The size of the shape's bounding box."
+						}
+					],
+					"description": "Returns the bounding box of a shape \u2013 the dimensions that a shape occupies when building."
 				},
 				"getBody": {
 					"args": 1,
@@ -3507,7 +3785,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"body"
+							],
+							"description": "The body which the shape is part of."
+						}
+					],
 					"description": "Returns the [`body`](#userdata.body \"userdata.body\") a shape is part of."
 				},
 				"getInteractable": {
@@ -3522,7 +3807,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"interactable"
+							],
+							"description": "The interactable belonging to the shape."
+						}
+					],
 					"description": "Returns the [`interactable`](#userdata.interactable \"userdata.interactable\") of a shape, if one exists. Otherwise the function will return nil."
 				},
 				"destroyPart": {
@@ -3559,7 +3851,14 @@
 							"description": "The shape."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "The shape's world rotation."
+						}
+					],
 					"description": "Returns the world rotation of a shape."
 				},
 				"createPart": {
@@ -4511,7 +4810,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The body's id."
+						}
+					],
 					"description": "Returns the id of a body."
 				},
 				"getCreationId": {
@@ -4539,7 +4845,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The body's mass."
+						}
+					],
 					"description": "Returns the mass of a body."
 				},
 				"getWorldPosition": {
@@ -4554,7 +4867,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The body's world position."
+						}
+					],
 					"description": "Returns the world position of a body."
 				},
 				"getVelocity": {
@@ -4569,7 +4889,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The body's linear velocity."
+						}
+					],
 					"description": "Returns the linear velocity of a body."
 				},
 				"getAngularVelocity": {
@@ -4584,7 +4911,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The body's angular velocity."
+						}
+					],
 					"description": "Returns the angular velocity of a body."
 				},
 				"getShapes": {
@@ -4599,7 +4933,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {shape}"
+							],
+							"description": "The table of shapes in a body."
+						}
+					],
 					"description": "Returns a table of all [`shapes`](#userdata.shape \"userdata.shape\") that are part of a body.\n\nThis will **not** return shapes in neighbouring bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"getCreationShapes": {
@@ -4614,7 +4955,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {shape}"
+							],
+							"description": "The table of shapes in a creation."
+						}
+					],
 					"description": "Returns a table of all [`shapes`](#userdata.shape \"userdata.shape\") that are part of a creation.\n\nA creation includes all bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"getCreationBodies": {
@@ -4629,7 +4977,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {body}"
+							],
+							"description": "The table all bodies in a creation."
+						}
+					],
 					"description": "Returns a table of all bodies in a creation.\n\nA creation includes all bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"getCreationsFromBodies": {
@@ -4643,7 +4998,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table { {body}, ... }"
+							],
+							"description": "The table array containing tables of all the bodies, grouped by creation."
+						}
+					],
 					"description": "Returns a table of tables, which is an array of tables containing bodies grouped by creation.\n\nA creation includes all bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"hasChanged": {
@@ -4665,14 +5027,28 @@
 							"description": "The tick."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Returns true if the body has been changed."
+						}
+					],
 					"description": "Returns true if the given tick is lower than the tick the body was last changed."
 				},
 				"getAllBodies": {
 					"args": -1,
 					"sandbox": "serverMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {body}"
+							],
+							"description": "The table of all bodies."
+						}
+					],
 					"description": "Returns a table with all the bodies in the world."
 				},
 				"createBody": {
@@ -4759,7 +5135,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is dynamic."
+						}
+					],
 					"description": "Check if a body is dyanmic"
 				},
 				"isStatic": {
@@ -4774,7 +5157,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is static."
+						}
+					],
 					"description": "Check if a body is static"
 				},
 				"isOnLift": {
@@ -4802,7 +5192,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is destructable."
+						}
+					],
 					"description": "Check if a body is destructable."
 				},
 				"setDestructable": {
@@ -4839,7 +5236,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is buildable."
+						}
+					],
 					"description": "Check if a body is buildable"
 				},
 				"setBuildable": {
@@ -4876,7 +5280,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is paintable."
+						}
+					],
 					"description": "Check if a body is paintable"
 				},
 				"setPaintable": {
@@ -4913,7 +5324,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is connectable."
+						}
+					],
 					"description": "Check if a body is connectable"
 				},
 				"setConnectable": {
@@ -4950,7 +5368,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is liftable."
+						}
+					],
 					"description": "Check if a body is liftable"
 				},
 				"setLiftable": {
@@ -4987,7 +5412,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is interactable."
+						}
+					],
 					"description": "Check if a body is interactable"
 				},
 				"setUsable": {
@@ -5024,7 +5456,14 @@
 							"description": "The body."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Return true if the body is erasable."
+						}
+					],
 					"description": "Check if a body is erasable."
 				},
 				"setErasable": {
@@ -5753,7 +6192,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The interactable's id."
+						}
+					],
 					"description": "Returns the id of an interactable."
 				},
 				"getType": {
@@ -5768,7 +6214,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"string"
+							],
+							"description": "The interactable's type. (sm.interactable.types)"
+						}
+					],
 					"description": "Returns the interactable type of an interactable."
 				},
 				"getColorNormal": {
@@ -5783,7 +6236,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"color"
+							],
+							"description": "The connection-point color."
+						}
+					],
 					"description": "Returns the connection-point color of an interactable. The point is shown when using the _Connect Tool_."
 				},
 				"getColorHighlight": {
@@ -5798,7 +6258,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"color"
+							],
+							"description": "The connection-point highlight color."
+						}
+					],
 					"description": "Returns the connection-point highlight color of an interactable. The point is shown when using the _Connect Tool_."
 				},
 				"getMaxParentCount": {
@@ -5813,8 +6280,15 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
-					"description": "Returns the maximum number of allowed parent connections of an interactable \u00E2\u20AC\u201C the number of incoming connections."
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The max parent connection count."
+						}
+					],
+					"description": "Returns the maximum number of allowed parent connections of an interactable \u2013 the number of incoming connections."
 				},
 				"getMaxChildCount": {
 					"args": 1,
@@ -5828,8 +6302,15 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
-					"description": "Returns the maximum number of allowed child connections of an interactable \u00E2\u20AC\u201C the number of outgoing connections."
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The max child connection count."
+						}
+					],
+					"description": "Returns the maximum number of allowed child connections of an interactable \u2013 the number of outgoing connections."
 				},
 				"isActive": {
 					"args": 1,
@@ -5843,7 +6324,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "The logic output signal."
+						}
+					],
 					"description": "Returns the logic output signal of an interactable. Signal is a boolean, **on** or **off**."
 				},
 				"setActive": {
@@ -5880,7 +6368,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The power output signal."
+						}
+					],
 					"description": "Returns the power output signal of an interactable. Signal is a number between -1 to 1, where 1 is forward and -1 backward."
 				},
 				"setPower": {
@@ -5950,7 +6445,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"shape"
+							],
+							"description": "The shape which hosts the interactable."
+						}
+					],
 					"description": "Returns the [`shape`](#userdata.shape \"userdata.shape\") of an interactable."
 				},
 				"getConnectionInputType": {
@@ -5991,7 +6493,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"body"
+							],
+							"description": "The body an interactable's shape is part of."
+						}
+					],
 					"description": "Returns the [`body`](#userdata.body \"userdata.body\") an interactable's [`shape`](#userdata.shape \"userdata.shape\") is part of."
 				},
 				"getSingleParent": {
@@ -6006,7 +6515,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"interactable"
+							],
+							"description": "The connected parent interactable."
+						}
+					],
 					"description": "Returns the parent [`interactable`](#userdata.interactable \"userdata.interactable\") that is connected to an interactable. The parent act as the interactable's input.\n\nWarning\n\nThis method is **not** allowed for an interactable that allows more than one parent connection. See [`sm.interactable.getMaxParentCount`](#sm.interactable.getmaxparentcount \"sm.interactable.getmaxparentcount\")."
 				},
 				"getParents": {
@@ -6027,7 +6543,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {interactable}"
+							],
+							"description": "A table of the connected parent interactables."
+						}
+					],
 					"description": "Returns a table of parent [`interactables`](#userdata.interactable \"userdata.interactable\") that are connected to an interactable. The parents act as the interactable's input."
 				},
 				"getChildren": {
@@ -6048,7 +6571,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {interactable}"
+							],
+							"description": "A table of the connected child interactables."
+						}
+					],
 					"description": "Returns a table of child [`interactables`](#userdata.interactable \"userdata.interactable\") that an interactable is connected to. The children listen to the interactable's output."
 				},
 				"getJoints": {
@@ -6063,7 +6593,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {joint}"
+							],
+							"description": "A table of the connected joints."
+						}
+					],
 					"description": "Returns a table of all [`joints`](#userdata.joint \"userdata.joint\") that an interactable is connected to. Joints include **bearings** and **pistons**."
 				},
 				"getBearings": {
@@ -6078,7 +6615,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {joint}"
+							],
+							"description": "A table of the connected bearings."
+						}
+					],
 					"description": "Returns a table of [`bearings`](#userdata.joint \"userdata.joint\") that an interactable is connected to."
 				},
 				"getPistons": {
@@ -6093,7 +6637,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {joint}"
+							],
+							"description": "A table of the connected pistons."
+						}
+					],
 					"description": "Returns a table of [`pistons`](#userdata.joint \"userdata.joint\") that an interactable is connected to."
 				},
 				"getPoseWeight": {
@@ -6115,7 +6666,14 @@
 							"description": "The index."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The pose weight."
+						}
+					],
 					"description": "Returns the pose weight of the pose in the given index."
 				},
 				"setPoseWeight": {
@@ -6193,7 +6751,14 @@
 							"description": "The interactable."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The uv frame."
+						}
+					],
 					"description": "Returns the index of the current UV animation frame"
 				},
 				"setUvFrameIndex": {
@@ -6334,7 +6899,14 @@
 							"description": "The bone name."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The position."
+						}
+					],
 					"description": "Return the position of the bone"
 				},
 				"getWorldBonePosition": {
@@ -6356,7 +6928,14 @@
 							"description": "The bone name."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The position."
+						}
+					],
 					"description": "Return the position of the bone"
 				},
 				"getContainer": {
@@ -6378,7 +6957,14 @@
 							"description": "The index of the container (default: 0)."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"container"
+							],
+							"description": "The container."
+						}
+					],
 					"description": "Returns the container stored in the given index inside the controller"
 				},
 				"connect": {
@@ -7873,7 +8459,14 @@
 							"description": "The joint."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The joint's id."
+						}
+					],
 					"description": "Returns the id of a joint."
 				},
 				"getType": {
@@ -7888,7 +8481,14 @@
 							"description": "The joint."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"string"
+							],
+							"description": "The joint's type. (sm.joint.types)"
+						}
+					],
 					"description": "Returns the joint type of a joint."
 				},
 				"getShapeA": {
@@ -7903,7 +8503,14 @@
 							"description": "The joint."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"shape"
+							],
+							"description": "The joint's first shape."
+						}
+					],
 					"description": "Returns the [`shape`](#userdata.shape \"userdata.shape\") a joint is attached to. This shape does always exist."
 				},
 				"getShapeB": {
@@ -7918,7 +8525,14 @@
 							"description": "The joint."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"shape"
+							],
+							"description": "The joint's second shape."
+						}
+					],
 					"description": "Returns the [`shape`](#userdata.shape \"userdata.shape\") that is attached to a joint on another [`body`](#userdata.body \"userdata.body\"). This method returns nil if there is no shape attached to the joint."
 				},
 				"getColor": {
@@ -7933,7 +8547,14 @@
 							"description": "The joint."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"color"
+							],
+							"description": "The joint's color."
+						}
+					],
 					"description": "Returns the color of a joint."
 				},
 				"getAngle": {
@@ -7949,7 +8570,14 @@
 							"description": "The bearing."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The bearing's angle. The angle ranges between -math.pi and +math.pi."
+						}
+					],
 					"description": "Returns the angle of a bearing."
 				},
 				"getAngularVelocity": {
@@ -7965,7 +8593,14 @@
 							"description": "The bearing."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The bearing's angular velocity."
+						}
+					],
 					"description": "Returns the angular velocity of a bearing.\n\nThe angular velocity can be set using [`setMotorVelocity`](#sm.joint.setmotorvelocity \"sm.joint.setmotorvelocity\") or [`setTargetAngle`](#sm.joint.settargetangle \"sm.joint.settargetangle\")."
 				},
 				"getAppliedImpulse": {
@@ -7981,7 +8616,14 @@
 							"description": "The bearing."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The bearing's applied impulse."
+						}
+					],
 					"description": "Returns the applied impulse of a bearing.\n\nThe applied impulse can be set using [`setMotorVelocity`](#sm.joint.setmotorvelocity \"sm.joint.setmotorvelocity\") or [`setTargetAngle`](#sm.joint.settargetangle \"sm.joint.settargetangle\")."
 				},
 				"isReversed": {
@@ -7997,7 +8639,14 @@
 							"description": "The bearing."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Whether the bearing is reversed (rotating counterclockwise)."
+						}
+					],
 					"description": "Returns whether a bearing has been reversed using the _Connect Tool_. A reversed bearing rotates counterclockwise."
 				},
 				"setMotorVelocity": {
@@ -8085,7 +8734,14 @@
 							"description": "The piston."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The piston's current length in blocks."
+						}
+					],
 					"description": "Returns the current length of a piston. The length is measured in blocks."
 				},
 				"setTargetLength": {
@@ -8509,14 +9165,28 @@
 					"args": -1,
 					"sandbox": "serverMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Whether starting a transaction was successful."
+						}
+					],
 					"description": "Starts a new _transaction_ shared across all containers. A transaction is a collection of all changes of container items will be collected and processed\n\nA transaction must be ended with [`sm.container.endTransaction`](#sm.container.endtransaction \"sm.container.endtransaction\")."
 				},
 				"endTransaction": {
 					"args": -1,
 					"sandbox": "serverMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Whether ending a transaction was successful."
+						}
+					],
 					"description": "Ends a transaction."
 				},
 				"abortTransaction": {
@@ -8538,7 +9208,14 @@
 							"description": "The container."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The size."
+						}
+					],
 					"description": "Returns the number of slots in a container."
 				},
 				"getMaxStackSize": {
@@ -8593,7 +9270,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Indicates if the action is possible."
+						}
+					],
 					"description": "Sets the number of items stacked in a given container slot."
 				},
 				"getItem": {
@@ -8615,7 +9299,14 @@
 							"description": "The slot."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {uuid, int, (int)}"
+							],
+							"description": "The table."
+						}
+					],
 					"description": "Returns a table containing item uuid, quantity (and instance id for tools) at given slot."
 				},
 				"getFirstItem": {
@@ -8650,7 +9341,14 @@
 							"description": "The tick."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Returns true if the container has been changed."
+						}
+					],
 					"description": "Returns true if the given tick is lower than the tick the container was last changed."
 				},
 				"isEmpty": {
@@ -8665,7 +9363,14 @@
 							"description": "The container."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"bool"
+							],
+							"description": "Returns true if the container is empty."
+						}
+					],
 					"description": "Returns true if the container is empty."
 				},
 				"getId": {
@@ -10354,7 +11059,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"character"
+							],
+							"description": "The created character."
+						}
+					],
 					"description": "Creates a new character in a world."
 				},
 				"preloadRenderables": {
@@ -11284,7 +11996,14 @@
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {player}"
+							],
+							"description": "The table of players in the game."
+						}
+					],
 					"description": "Returns a table of all [`players`](#userdata.player \"userdata.player\") that are currently in the game."
 				},
 				"placeLift": {
@@ -12100,7 +12819,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"areaTrigger"
+							],
+							"description": "The created area trigger."
+						}
+					],
 					"description": "Creates a new box area trigger at a given position with a given size.\n\nIf a filter is specified, the trigger area will only be able to detects objects of that certain type. See [`sm.areaTrigger.filter`](#sm.areatrigger.filter \"sm.areatrigger.filter\") for more information about filters."
 				},
 				"createBoxWater": {
@@ -12182,7 +12908,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"areaTrigger"
+							],
+							"description": "The created area trigger."
+						}
+					],
 					"description": "Creates an area trigger box with a given size that stays attached to an [`interactable`](#sm.interactable \"sm.interactable\")\n\nIf a filter is specified, the trigger area will only be able to detects objects of that certain type. See [`sm.areaTrigger.filter`](#sm.areatrigger.filter \"sm.areatrigger.filter\") for more information about filters."
 				},
 				"destroy": {
@@ -12965,21 +13698,42 @@
 							"description": "The Z value."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The created vector."
+						}
+					],
 					"description": "Creates a new vector."
 				},
 				"zero": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The zero vector."
+						}
+					],
 					"description": "Creates a new vector with 0 in x, y, x."
 				},
 				"one": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The one vector."
+						}
+					],
 					"description": "Creates a new vector with 1 in x, y, x."
 				},
 				"getX": {
@@ -12994,7 +13748,14 @@
 							"description": "The vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The X value."
+						}
+					],
 					"description": "Returns the X value of a vector."
 				},
 				"setX": {
@@ -13032,7 +13793,14 @@
 							"description": "The vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The Y value."
+						}
+					],
 					"description": "Returns the Y value of a vector."
 				},
 				"setY": {
@@ -13070,7 +13838,14 @@
 							"description": "The vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The Z value."
+						}
+					],
 					"description": "Returns the Z value of a vector."
 				},
 				"setZ": {
@@ -13108,7 +13883,14 @@
 							"description": "The vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The normalized vector."
+						}
+					],
 					"description": "Normalizes a vector, ie. converts to a unit vector of length 1."
 				},
 				"dot": {
@@ -13130,7 +13912,14 @@
 							"description": "The second vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The dot product."
+						}
+					],
 					"description": "Returns the [dot product](https://en.wikipedia.org/wiki/Dot_product) of a vector."
 				},
 				"cross": {
@@ -13152,7 +13941,14 @@
 							"description": "The second vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The cross product."
+						}
+					],
 					"description": "Returns the [cross product](https://en.wikipedia.org/wiki/Cross_product) of two vectors."
 				},
 				"length": {
@@ -13167,7 +13963,14 @@
 							"description": "The vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The length of the vector."
+						}
+					],
 					"description": "Returns the distance of the vector.\n\nIf you want the squared length, using [`length2`](#sm.vec3.length2 \"sm.vec3.length2\") is faster than squaring the result of this function."
 				},
 				"length2": {
@@ -13182,7 +13985,14 @@
 							"description": "The vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The squared length of the vector."
+						}
+					],
 					"description": "Returns the squared distance of the vector."
 				},
 				"lerp": {
@@ -13212,7 +14022,14 @@
 							"description": "Interpolation amount between the two inputs."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "out"
+						}
+					],
 					"description": "Performs a [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation) between two vectors."
 				},
 				"bezier2": {
@@ -13305,7 +14122,14 @@
 							"description": "The angle."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The rotated vector."
+						}
+					],
 					"description": "Rotate a vector around the X axis."
 				},
 				"rotateY": {
@@ -13328,7 +14152,14 @@
 							"description": "The angle."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The rotated vector."
+						}
+					],
 					"description": "Rotate a vector around the Y axis."
 				},
 				"rotateZ": {
@@ -13351,7 +14182,14 @@
 							"description": "The angle."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The rotated vector."
+						}
+					],
 					"description": "Rotate a vector around the Z axis."
 				},
 				"rotate": {
@@ -13381,7 +14219,14 @@
 							"description": "The axis to be rotated around."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The rotated vector."
+						}
+					],
 					"description": "Rotate a vector around an axis."
 				},
 				"getRotation": {
@@ -13403,7 +14248,14 @@
 							"description": "The second vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "The transformation."
+						}
+					],
 					"description": "Returns a [`quaternion`](#userdata.quat \"userdata.quat\") representing the rotation from one vector to another.\n\nThe quaternion can then be multiplied with any vector to rotate it in the same fashion.\n\nv1 \\= sm.vec3.new(1,0,0)\nv2 \\= sm.vec3.new(0,1,0)\n\ntrans \\= sm.vec3.getRotation(v1, v2)\n\\-- \\`trans\\` now rotates a vector 90 degrees\n\nprint(trans \\* v2)\n\\-- {<Vec3>, x = -1, y = 0, z = 0}"
 				},
 				"closestAxis": {
@@ -13418,7 +14270,14 @@
 							"description": "The vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The axis-aligned vector."
+						}
+					],
 					"description": "Finds the closest axis-aligned vector from the given vector"
 				}
 			},
@@ -13816,14 +14675,28 @@
 							"description": "The W value."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "The created quaternion."
+						}
+					],
 					"description": "Creates a new quaternion."
 				},
 				"identity": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "The created quaternion."
+						}
+					],
 					"description": "Creates a new identity quaternion."
 				},
 				"angleAxis": {
@@ -13858,7 +14731,14 @@
 							"description": "The quaternion."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The X value."
+						}
+					],
 					"description": "Returns the X value of a quaternion."
 				},
 				"setX": {
@@ -13896,7 +14776,14 @@
 							"description": "The quaternion."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The Y value."
+						}
+					],
 					"description": "Returns the Y value of a quaternion."
 				},
 				"setY": {
@@ -13934,7 +14821,14 @@
 							"description": "The quaternion."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The Z value."
+						}
+					],
 					"description": "Returns the Z value of a quaternion."
 				},
 				"setZ": {
@@ -13972,7 +14866,14 @@
 							"description": "The quaternion."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The W value."
+						}
+					],
 					"description": "Returns the W value of a quaternion."
 				},
 				"setW": {
@@ -14010,7 +14911,14 @@
 							"description": "The quaternion."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "quaternion\tThe rounded quaternion."
+						}
+					],
 					"description": "Rounds the quaternion rotation into 90 degree steps"
 				},
 				"lookRotation": {
@@ -14032,7 +14940,14 @@
 							"description": "The up vector."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "quaternion\tThe quaternion."
+						}
+					],
 					"description": "Create a new quaternion from direction vectors"
 				},
 				"slerp": {
@@ -14062,7 +14977,14 @@
 							"description": "Interpolation amount between the two inputs."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"quat"
+							],
+							"description": "out"
+						}
+					],
 					"description": "Performs a spherical linear interpolation between two quaternion."
 				}
 			},
@@ -14161,14 +15083,28 @@
 							"description": "The string to generate an uuid instance from. If none is provided, generate a random uuid."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"uuid"
+							],
+							"description": "The created uuid."
+						}
+					],
 					"description": "Generates a uuid."
 				},
 				"getNil": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"uuid"
+							],
+							"description": "The nil uuid."
+						}
+					],
 					"description": "Creates a nil uuid {00000000-0000-0000-0000-000000000000}"
 				}
 			},
@@ -14283,7 +15219,14 @@
 							"name": ""
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"color"
+							],
+							"description": "The created color."
+						}
+					],
 					"description": "Creates a new color object from a hex value `0xRRBBGGAA`."
 				},
 				"getR": {
@@ -14298,7 +15241,14 @@
 							"description": "The color object."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The red value."
+						}
+					],
 					"description": "Returns the red value of a color."
 				},
 				"getG": {
@@ -14313,7 +15263,14 @@
 							"description": "The color object."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The green value."
+						}
+					],
 					"description": "Returns the green value of a color."
 				},
 				"getB": {
@@ -14328,7 +15285,14 @@
 							"description": "The color object."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The blue value."
+						}
+					],
 					"description": "Returns the blue value of a color."
 				},
 				"getA": {
@@ -14343,7 +15307,14 @@
 							"description": "The color object."
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"number"
+							],
+							"description": "The alpha value."
+						}
+					],
 					"description": "Returns the alpha value of a color."
 				},
 				"setR": {
@@ -16816,7 +17787,14 @@
 							"description": "The bone name. (Optional)"
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"effect"
+							],
+							"description": "The created effect."
+						}
+					],
 					"description": "Creates an effect.\n\nIf you provide a host interactable to the effect then it will fetch position, velocity and orientation data from the interactable instead of relying on this information being fed to it.\n\nThis results in far more accurate positioning of effects that are supposed to stay attached to an object."
 				},
 				"createEffect2D": {
@@ -17163,49 +18141,98 @@
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"player"
+							],
+							"description": "The player object."
+						}
+					],
 					"description": "Returns the player object of the local player."
 				},
 				"getId": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"int"
+							],
+							"description": "The player's id."
+						}
+					],
 					"description": "Returns the unique player id of the local player."
 				},
 				"getPosition": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The player's world position."
+						}
+					],
 					"description": "Returns the world postition of the local player."
 				},
 				"getDirection": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The direction of the player's aim."
+						}
+					],
 					"description": "Returns the direction the local player is aiming."
 				},
 				"getRight": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The right-vector of the player's aim."
+						}
+					],
 					"description": "Returns the right-vector perpendicular to the local player's aim."
 				},
 				"getUp": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The up-vector of the player's aim."
+						}
+					],
 					"description": "Returns the up-vector perpendicular to the local player's aim."
 				},
 				"getRaycastStart": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The start position of the raycast."
+						}
+					],
 					"description": "Returns the start position of the local player's raycast. The position depends on the [`camera`](#sm.camera \"sm.camera\")'s position, and whether it's in first- of third-person."
 				},
 				"getRaycast": {
@@ -17235,7 +18262,14 @@
 							"description": "The direction. (Defaults to getDirection)"
 						}
 					],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"table {bool, raycastResult}"
+							],
+							"description": "2 values: whether raycast was successful; the raycast result data."
+						}
+					],
 					"description": "Performs a [raycast](https://en.wikipedia.org/wiki/Ray_casting) relative to the local player's perspective."
 				},
 				"isInFirstPersonView": {
@@ -17427,7 +18461,14 @@
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The camera's world position."
+						}
+					],
 					"description": "Returns the world postition of the camera."
 				},
 				"getDefaultPosition": {
@@ -17453,28 +18494,56 @@
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The direction of the camera's aim."
+						}
+					],
 					"description": "Returns the direction the camera is aiming."
 				},
 				"getUp": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The up-vector of the camera's aim."
+						}
+					],
 					"description": "Returns the up-vector perpendicular to the camera's aim."
 				},
 				"getRight": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The right-vector of the camera's aim."
+						}
+					],
 					"description": "Returns the right-vector perpendicular to the camera's aim."
 				},
 				"getFov": {
 					"args": -1,
 					"sandbox": "clientMethod",
 					"params": [],
-					"returns": [],
+					"returns": [
+						{
+							"type": [
+								"vec3"
+							],
+							"description": "The field of view."
+						}
+					],
 					"description": "Returns the camera's field of view angle."
 				},
 				"setShake": {

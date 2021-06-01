@@ -85,6 +85,7 @@ th {
 ul.parameters {
 	margin-top: 0;
 	margin-bottom: 10px;
+	padding-left: 30px;
 }
 
 ul.parameters li {
@@ -98,6 +99,10 @@ ul.parameters li {
 ul.parameters li span {
 	font-size: 1.25em;
 	display: contents;
+}
+
+strong.parameters-strong {
+	margin-right: 10px;
 }
 
 
@@ -160,6 +165,11 @@ code.declsandbox {
 
 code.declsandbox:not(:empty) {
 	padding: 1px 4px;
+}
+
+span.declseparator {
+	float: left;
+	margin-right: 5px;
 }
 
 

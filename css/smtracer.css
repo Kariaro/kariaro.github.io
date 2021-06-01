@@ -47,6 +47,17 @@ body {
 	font-style: italic;
 }
 
+#docs a {
+	color: #a6a6a6;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#docs a:hover {
+	color: #ccc;
+	text-decoration: none;
+	font-weight: bold;
+}
 
 /* #8C5F1F */
 /* #D99C45 */
@@ -69,10 +80,6 @@ dd {
 
 th {
 	float: left;
-}
-
-code.declsandbox {
-	margin-left: 0.5em;
 }
 
 ul.parameters {
@@ -141,6 +148,18 @@ code.declparam {
 
 code.declname {
 	font-size: 13px;
+}
+
+code.declsandbox {
+	font-size: 13px;
+	margin-left: 0.5em;
+	background-color: #0005;
+	font-style: italic;
+	color: #FFC26B;
+}
+
+code.declsandbox:not(:empty) {
+	padding: 1px 4px;
 }
 
 

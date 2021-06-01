@@ -13,7 +13,7 @@ xmlhttp.onreadystatechange = function() {
 		}
 	}
 };
-xmlhttp.open('GET', 'traces/api.0.5.1_658.json', true);
+xmlhttp.open('GET', 'traces/api.0.5.1_658.combined.json', true);
 xmlhttp.send();
 
 function makePackage(json) {
@@ -130,9 +130,18 @@ function makeFunction(element, path, is_userdata, name, json) {
 	
 	let decl_name = Utils.escapeHtml(path + (is_userdata ? ':':'.') + name);
 	element.id = decl_name;
+	let decl_desc = '';
+	if('description' in json) {
+		if(marked) {
+			decl_desc = marked(json.description);
+		} else {
+			decl_desc = Utils.escapeHtml(json.description);
+		}
+	}
+
 	getTemplateBuilder(element)
 		.set('{DECLSANDBOX}', Utils.escapeHtml(json.sandbox))
-		.set('{DESCRIPTION}', ('description' in json) ? Utils.escapeHtml(json.description):'')
+		.set('{DESCRIPTION}', decl_desc)
 		.set('{DECLPARAMS}', makeDeclparams(json.params))
 		.set('{DECLNAME}', decl_name)
 		.set('{PARAMETERS}', makeParameters(json.params))

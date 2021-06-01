@@ -1,11 +1,11 @@
 {
 	"author": "HardCoded",
-	"version": "0.5.1_658",
+	"version": "invalid",
 	"comment": "This json file was made by the ghidra module ScrapMechanicTracer. https://github.com/Kariaro/ScrapMechanicTracer",
-	"time": 1622130353582,
+	"time": 1622368586765,
 	"urls": {
-		"twitch": "https://github.com/Kariaro",
 		"github": "https://www.twitch.tv/hard_coded",
+		"twitch": "https://github.com/Kariaro",
 		"twitter": "https://twitter.com/HardCodedTwitch"
 	},
 	"content": {
@@ -49,7 +49,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Performs a [ray cast](https://en.wikipedia.org/wiki/Ray_casting) between two positions.\n\nThe returned [`raycastResult`](#userdata.raycastresult \"userdata.raycastresult\") contains information about any object intersected by the ray.\n\nIf the ray cast is called from within a shape (e.g. a Sensor), a [`body`](#userdata.body \"userdata.body\") may be provided which the ray will not intersect."
 				},
 				"distanceRaycast": {
 					"args": 2,
@@ -68,11 +69,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Performs a distance [ray cast](https://en.wikipedia.org/wiki/Ray_casting) from a position with a given direction.\n\nNote\n\n[`sm.physics.distanceRaycast`](#sm.physics.distanceraycast \"sm.physics.distanceraycast\") is generally cheaper to use than [`sm.physics.raycast`](#sm.physics.raycast \"sm.physics.raycast\") as it performs collision checks in a simplified world. If the raycast is only used for checking collision, it is adviced to use this method instead."
 				},
 				"applyImpulse": {
 					"args": 4,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -102,11 +104,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Applies an impulse to a [`character`](#userdata.character \"userdata.character\"), changing its velocity immediately. The impulse is applied to the character's centerpoint."
 				},
 				"applyTorque": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -128,11 +131,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Applies a torque impulse to a [`body`](#userdata.body \"userdata.body\"), changing its angular velocity immediately. The torque is applied along the body's center of mass, making it rotate."
 				},
 				"explode": {
 					"args": 8,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -186,11 +190,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates an explosion at given position. The explosion creates a shockwave that is capable of destroying blocks and pushing characters and creations away.\n\nShapes that are within the explosion's destruction radius may receive the event [`server_onExplosion`](#shapeclass.server_onexplosion \"shapeclass.server_onexplosion\").\n\nNote\n\nThe **destruction level** is the damage effect on blocks and parts, determining how likely it is that they are destroyed. This is related to the `qualityLevel` found in parts json-files.\n\nAny quality level equal to or less than the destruction level may be destroyed. The effect fades one level every half travelled of the remaining destruction radius.\n\nA quality level of 0 means a block or part is indestructible."
 				},
 				"setGravity": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -200,13 +205,15 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the gravitational acceleration affecting [`shapes`](#userdata.shape \"userdata.shape\") and [`bodies`](#userdata.body \"userdata.body\")."
 				},
 				"getGravity": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the gravitational acceleration affecting [`shapes`](#userdata.shape \"userdata.shape\") and [`bodies`](#userdata.body \"userdata.body\")."
 				},
 				"getGroundMaterial": {
 					"args": 1,
@@ -443,7 +450,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "A simplex noise 1d function."
 				},
 				"simplexNoise2d": {
 					"args": 2,
@@ -464,7 +472,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "A simplex noise 2d function."
 				},
 				"intNoise2d": {
 					"args": 3,
@@ -489,7 +498,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "An integer noise 2d function."
 				},
 				"floatNoise2d": {
 					"args": 2,
@@ -510,7 +520,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "A float noise 2d function."
 				},
 				"perlinNoise2d": {
 					"args": 3,
@@ -570,7 +581,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "An octave noise 2d function."
 				},
 				"randomRange": {
 					"args": 2,
@@ -591,7 +603,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a random number N such that `a <= N <= b`."
 				},
 				"randomNormalDistribution": {
 					"args": 2,
@@ -612,7 +625,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a random number according to the [normal random number distribution](https://en.wikipedia.org/wiki/Normal_distribution).\n\nValues near the **mean** are the most likely.\n\nStandard **deviation** affects the dispersion of generated values from the mean."
 				},
 				"gunSpread": {
 					"args": 2,
@@ -632,7 +646,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a directional vector with a random spread given by a [`normal distribution`](#sm.noise.randomnormaldistribution \"sm.noise.randomnormaldistribution\")."
 				}
 			},
 			"userdata": {}
@@ -666,7 +681,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Restricts a value to a given range."
 				},
 				"lerp": {
 					"args": 3,
@@ -694,7 +710,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Linear interpolation between two values. This is known as a lerp."
 				},
 				"bezier2": {
 					"args": 4,
@@ -729,7 +746,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Quadratic Bezier interpolation. One dimensional bezier curve."
 				},
 				"bezier3": {
 					"args": 5,
@@ -771,7 +789,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Cubic Bezier interpolation. One dimensional bezier curve."
 				},
 				"positiveModulo": {
 					"args": 2,
@@ -790,7 +809,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the positive remainder after division of x by n."
 				},
 				"smoothstep": {
 					"args": 3,
@@ -818,7 +838,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Performs smooth Hermite interpolation between 0 and 1 when `edge0 < x < edge1`. This is useful in cases where a threshold function with a smooth transition is desired."
 				},
 				"smootherstep": {
 					"args": 3,
@@ -846,7 +867,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "An improved version of the [`smoothstep`](#sm.util.smoothstep \"sm.util.smoothstep\") function which has zero 1st and 2nd order derivatives at `x = edge0` and `x = edge1`."
 				}
 			},
 			"userdata": {}
@@ -865,11 +887,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the mass of a projectile."
 				},
 				"playerFire": {
 					"args": 6,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -908,11 +931,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates and fires a projectile from a player.\n\nThe projectile is normally fired from the player's position, but due to the weapon being held off-center it may require a fake position for where the projectile appears to be fired from."
 				},
 				"shapeFire": {
 					"args": 5,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -945,7 +969,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates and fires a projectile from a [`shape`](#userdata.shape \"userdata.shape\")."
 				},
 				"solveBallisticArc": {
 					"args": 4,
@@ -1358,7 +1383,8 @@
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Return the current game tick"
 				},
 				"setLimitedInventory": {
 					"args": 1,
@@ -1750,7 +1776,7 @@
 				},
 				"getInteractablesByUuid": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -1771,7 +1797,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns all [`interactables`](#sm.interactable \"sm.interactable\") of a given type for a cell coordinate."
 				},
 				"getInteractablesByAnyUuid": {
 					"args": 3,
@@ -1847,46 +1874,7 @@
 		},
 		"sm.network": {
 			"constants": {},
-			"tabledata": {
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				}
-			},
+			"tabledata": {},
 			"userdata": {
 				"sendToServer": {
 					"args": 3,
@@ -1995,6 +1983,44 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -2003,13 +2029,53 @@
 			"tabledata": {
 				"save": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
 								"table",
 								"string",
 								"number"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table",
+								"string",
+								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Saves any Lua data at a given channel. A _channel_ can be any integer, and acts as the location the data will be stored at.\n\nThe data will remain stored after closing the world, and is retrieved using [`load`](#sm.storage.load \"sm.storage.load\"), provided the same channel number.\n\nNote\n\nThe data is stored globally **within the current mod**. As of such, channels will not collide with external mods and scripts."
+				},
+				"load": {
+					"args": 1,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"table",
+								"string",
+								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Loads Lua data stored at a given channel. A _channel_ can be any integer, and acts as the location the data is stored at.\n\nIf no data is stored at the given channel, this returns nil."
+				}
+			},
+			"userdata": {
+				"save": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"storage"
 							],
 							"name": ""
 						},
@@ -2030,9 +2096,7 @@
 					"params": [
 						{
 							"type": [
-								"table",
-								"string",
-								"number"
+								"storage"
 							],
 							"name": ""
 						}
@@ -2077,42 +2141,6 @@
 					],
 					"returns": []
 				}
-			},
-			"userdata": {
-				"save": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"storage"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table",
-								"string",
-								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"load": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"storage"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				}
 			}
 		},
 		"sm.event": {
@@ -2120,7 +2148,7 @@
 			"tabledata": {
 				"sendToGame": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -2137,11 +2165,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sends a event from a world script to the game script."
 				},
 				"sendToWorld": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -2164,7 +2193,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sends a event from the game script to a specified world script."
 				},
 				"sendToUnit": {
 					"args": 3,
@@ -2822,25 +2852,28 @@
 			"tabledata": {
 				"start": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Starts challenge."
 				},
 				"stop": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Stops challenge."
 				},
 				"hasStarted": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Check if a challenge has started"
 				},
 				"levelCompleted": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -2864,7 +2897,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Completes a challenge level and saves progression."
 				},
 				"getCompletionTime": {
 					"args": 1,
@@ -3051,7 +3085,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the id of a shape."
 				},
 				"getShapeUuid": {
 					"args": 1,
@@ -3064,7 +3099,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the uuid string unique to a shape/block type."
 				},
 				"getColor": {
 					"args": 1,
@@ -3077,11 +3113,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the color of a shape."
 				},
 				"setColor": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -3096,7 +3133,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the color of a shape. This is similar to coloring with the _Paint Tool_."
 				},
 				"getMass": {
 					"args": 1,
@@ -3109,7 +3147,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the mass of a shape."
 				},
 				"getBuoyancy": {
 					"args": 1,
@@ -3135,7 +3174,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the material of a shape."
 				},
 				"getWorldPosition": {
 					"args": 1,
@@ -3148,7 +3188,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the world position of a shape."
 				},
 				"getLocalPosition": {
 					"args": 1,
@@ -3161,7 +3202,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the local grid postition of a shape."
 				},
 				"getVelocity": {
 					"args": 1,
@@ -3174,7 +3216,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the linear velocity of a shape."
 				},
 				"getXAxis": {
 					"args": 1,
@@ -3187,7 +3230,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the local x-axis vector of a shape."
 				},
 				"getYAxis": {
 					"args": 1,
@@ -3200,7 +3244,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the local y-axis vector of a shape."
 				},
 				"getZAxis": {
 					"args": 1,
@@ -3213,7 +3258,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the local z-axis vector of a shape."
 				},
 				"getAt": {
 					"args": 1,
@@ -3226,7 +3272,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the direction of a shape's front side.\n\nThe direction is affected by the shape's rotation in the world."
 				},
 				"getRight": {
 					"args": 1,
@@ -3239,7 +3286,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the direction of a shape's right side.\n\nThe direction is affected by the shape's rotation in the world."
 				},
 				"getUp": {
 					"args": 1,
@@ -3252,7 +3300,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the direction of a shape's top side.\n\nThe direction is affected by the shape's rotation in the world."
 				},
 				"transformPoint": {
 					"args": 2,
@@ -3271,7 +3320,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Transform a [`vec3`](#userdata.vec3 \"userdata.vec3\") with the local shape transform.\n\nlocal localPos \\= self.shape:transformPoint( worldPos )"
 				},
 				"transformLocalPoint": {
 					"args": 2,
@@ -3309,7 +3359,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Transform a [`quat`](#userdata.quat \"userdata.quat\") with the local shape transform.\n\nlocal worldUp \\= sm.vec3.new( 0, 0, 1 )\nlocal worldRot \\= sm.vec3.getRotation( worldUp, worldDir )\nlocal localRot \\= self.shape:transformRotation( worldRot )"
 				},
 				"getBoundingBox": {
 					"args": 1,
@@ -3322,7 +3373,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the bounding box of a shape \u00E2\u20AC\u201C the dimensions that a shape occupies when building."
 				},
 				"getBody": {
 					"args": 1,
@@ -3335,7 +3387,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the [`body`](#userdata.body \"userdata.body\") a shape is part of."
 				},
 				"getInteractable": {
 					"args": 1,
@@ -3348,11 +3401,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the [`interactable`](#userdata.interactable \"userdata.interactable\") of a shape, if one exists. Otherwise the function will return nil."
 				},
 				"destroyPart": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -3367,7 +3421,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Destroy a part"
 				},
 				"getWorldRotation": {
 					"args": 1,
@@ -3380,11 +3435,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the world rotation of a shape."
 				},
 				"createPart": {
 					"args": 5,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -3417,11 +3473,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Create a new part"
 				},
 				"createBlock": {
 					"args": 6,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -3460,11 +3517,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Create a new block"
 				},
 				"createJoint": {
 					"args": 4,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -3491,7 +3549,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Create a new joint"
 				},
 				"uuidExists": {
 					"args": 1,
@@ -3560,7 +3619,7 @@
 				},
 				"destroyShape": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -3575,7 +3634,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Destroy a shape"
 				},
 				"getShapeTitle": {
 					"args": 1,
@@ -3666,63 +3726,6 @@
 					"args": 1,
 					"sandbox": "",
 					"params": [
-						{
-							"type": [
-								"shape"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"shape"
-							],
-							"name": ""
-						},
 						{
 							"type": [
 								"shape"
@@ -4292,6 +4295,63 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"shape"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"shape"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -4309,7 +4369,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the id of a body."
 				},
 				"getCreationId": {
 					"args": 1,
@@ -4335,7 +4396,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the mass of a body."
 				},
 				"getWorldPosition": {
 					"args": 1,
@@ -4348,7 +4410,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the world position of a body."
 				},
 				"getVelocity": {
 					"args": 1,
@@ -4361,7 +4424,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the linear velocity of a body."
 				},
 				"getAngularVelocity": {
 					"args": 1,
@@ -4374,7 +4438,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the angular velocity of a body."
 				},
 				"getShapes": {
 					"args": 1,
@@ -4387,7 +4452,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of all [`shapes`](#userdata.shape \"userdata.shape\") that are part of a body.\n\nThis will **not** return shapes in neighbouring bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"getCreationShapes": {
 					"args": 1,
@@ -4400,7 +4466,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of all [`shapes`](#userdata.shape \"userdata.shape\") that are part of a creation.\n\nA creation includes all bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"getCreationBodies": {
 					"args": 1,
@@ -4413,7 +4480,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of all bodies in a creation.\n\nA creation includes all bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"getCreationsFromBodies": {
 					"args": 1,
@@ -4426,11 +4494,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of tables, which is an array of tables containing bodies grouped by creation.\n\nA creation includes all bodies connected by [`joints`](#userdata.joint \"userdata.joint\"), etc."
 				},
 				"hasChanged": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4445,13 +4514,15 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns true if the given tick is lower than the tick the body was last changed."
 				},
 				"getAllBodies": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table with all the bodies in the world."
 				},
 				"createBody": {
 					"args": 6,
@@ -4536,7 +4607,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is dyanmic"
 				},
 				"isStatic": {
 					"args": 1,
@@ -4549,7 +4621,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is static"
 				},
 				"isOnLift": {
 					"args": 1,
@@ -4575,11 +4648,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is destructable."
 				},
 				"setDestructable": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4594,7 +4668,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls whether a body is destructable"
 				},
 				"isBuildable": {
 					"args": 1,
@@ -4607,11 +4682,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is buildable"
 				},
 				"setBuildable": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4626,7 +4702,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls whether a body is buildable"
 				},
 				"isPaintable": {
 					"args": 1,
@@ -4639,11 +4716,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is paintable"
 				},
 				"setPaintable": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4658,7 +4736,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls whether a body is non paintable"
 				},
 				"isConnectable": {
 					"args": 1,
@@ -4671,11 +4750,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is connectable"
 				},
 				"setConnectable": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4690,7 +4770,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls whether a body is connectable"
 				},
 				"isLiftable": {
 					"args": 1,
@@ -4703,11 +4784,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is liftable"
 				},
 				"setLiftable": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4722,7 +4804,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls whether a body is liftable"
 				},
 				"isUsable": {
 					"args": 1,
@@ -4735,11 +4818,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is interactable"
 				},
 				"setUsable": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4754,7 +4838,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls whether a body is liftable"
 				},
 				"isErasable": {
 					"args": 1,
@@ -4767,11 +4852,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Check if a body is erasable."
 				},
 				"setErasable": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -4786,7 +4872,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls whether a body is erasable"
 				},
 				"isConvertibleToDynamic": {
 					"args": 1,
@@ -4814,63 +4901,6 @@
 						{
 							"type": [
 								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"body"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"body"
 							],
 							"name": ""
 						}
@@ -5474,6 +5504,63 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"body"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"body"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -5491,7 +5578,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the id of an interactable."
 				},
 				"getType": {
 					"args": 1,
@@ -5504,7 +5592,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the interactable type of an interactable."
 				},
 				"getColorNormal": {
 					"args": 1,
@@ -5517,7 +5606,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the connection-point color of an interactable. The point is shown when using the _Connect Tool_."
 				},
 				"getColorHighlight": {
 					"args": 1,
@@ -5530,7 +5620,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the connection-point highlight color of an interactable. The point is shown when using the _Connect Tool_."
 				},
 				"getMaxParentCount": {
 					"args": 1,
@@ -5543,7 +5634,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the maximum number of allowed parent connections of an interactable \u00E2\u20AC\u201C the number of incoming connections."
 				},
 				"getMaxChildCount": {
 					"args": 1,
@@ -5556,7 +5648,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the maximum number of allowed child connections of an interactable \u00E2\u20AC\u201C the number of outgoing connections."
 				},
 				"isActive": {
 					"args": 1,
@@ -5569,11 +5662,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the logic output signal of an interactable. Signal is a boolean, **on** or **off**."
 				},
 				"setActive": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -5588,7 +5682,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the logic output signal of an interactable. Signal is a boolean, **on** or **off**."
 				},
 				"getPower": {
 					"args": 1,
@@ -5601,11 +5696,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the power output signal of an interactable. Signal is a number between -1 to 1, where 1 is forward and -1 backward."
 				},
 				"setPower": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -5621,7 +5717,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the power output signal of an interactable. Signal is a number between -1 to 1, where 1 is forward and -1 backward."
 				},
 				"getPublicData": {
 					"args": 1,
@@ -5666,7 +5763,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the [`shape`](#userdata.shape \"userdata.shape\") of an interactable."
 				},
 				"getConnectionInputType": {
 					"args": 1,
@@ -5705,7 +5803,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the [`body`](#userdata.body \"userdata.body\") an interactable's [`shape`](#userdata.shape \"userdata.shape\") is part of."
 				},
 				"getSingleParent": {
 					"args": 1,
@@ -5718,7 +5817,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the parent [`interactable`](#userdata.interactable \"userdata.interactable\") that is connected to an interactable. The parent act as the interactable's input.\n\nWarning\n\nThis method is **not** allowed for an interactable that allows more than one parent connection. See [`sm.interactable.getMaxParentCount`](#sm.interactable.getmaxparentcount \"sm.interactable.getmaxparentcount\")."
 				},
 				"getParents": {
 					"args": 2,
@@ -5737,7 +5837,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of parent [`interactables`](#userdata.interactable \"userdata.interactable\") that are connected to an interactable. The parents act as the interactable's input."
 				},
 				"getChildren": {
 					"args": 2,
@@ -5756,7 +5857,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of child [`interactables`](#userdata.interactable \"userdata.interactable\") that an interactable is connected to. The children listen to the interactable's output."
 				},
 				"getJoints": {
 					"args": 1,
@@ -5769,7 +5871,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of all [`joints`](#userdata.joint \"userdata.joint\") that an interactable is connected to. Joints include **bearings** and **pistons**."
 				},
 				"getBearings": {
 					"args": 1,
@@ -5782,7 +5885,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of [`bearings`](#userdata.joint \"userdata.joint\") that an interactable is connected to."
 				},
 				"getPistons": {
 					"args": 1,
@@ -5795,11 +5899,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table of [`pistons`](#userdata.joint \"userdata.joint\") that an interactable is connected to."
 				},
 				"getPoseWeight": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -5814,11 +5919,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the pose weight of the pose in the given index."
 				},
 				"setPoseWeight": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -5840,7 +5946,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Set the pose weight of the pose in the given index."
 				},
 				"getGlowMultiplier": {
 					"args": 1,
@@ -5877,7 +5984,7 @@
 				},
 				"getUvFrameIndex": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -5886,11 +5993,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the index of the current UV animation frame"
 				},
 				"setUvFrameIndex": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -5905,7 +6013,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the UV animation frame with the given index."
 				},
 				"hasAnim": {
 					"args": 2,
@@ -5928,7 +6037,7 @@
 				},
 				"setAnimProgress": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -5950,11 +6059,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the progress on the animation with the given name."
 				},
 				"setAnimEnabled": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -5975,7 +6085,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets whether the animation with the given name should be applied to the mesh. True enables the animation and false disables it."
 				},
 				"getAnimDuration": {
 					"args": 2,
@@ -6013,7 +6124,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Return the position of the bone"
 				},
 				"getWorldBonePosition": {
 					"args": 2,
@@ -6032,7 +6144,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Return the position of the bone"
 				},
 				"getContainer": {
 					"args": 2,
@@ -6051,7 +6164,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the container stored in the given index inside the controller"
 				},
 				"connect": {
 					"args": 2,
@@ -6156,63 +6270,6 @@
 								"table",
 								"string",
 								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"interactable"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"interactable"
 							],
 							"name": ""
 						}
@@ -7434,12 +7491,399 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"interactable"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"interactable"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
 		"sm.joint": {
 			"constants": {},
 			"tabledata": {
+				"createPart": {
+					"args": 6,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"uuid"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Create a part on joint"
+				},
+				"createBlock": {
+					"args": 5,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"uuid"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Create a block on joint"
+				},
+				"getId": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the id of a joint."
+				},
+				"getType": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the joint type of a joint."
+				},
+				"getShapeA": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the [`shape`](#userdata.shape \"userdata.shape\") a joint is attached to. This shape does always exist."
+				},
+				"getShapeB": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the [`shape`](#userdata.shape \"userdata.shape\") that is attached to a joint on another [`body`](#userdata.body \"userdata.body\"). This method returns nil if there is no shape attached to the joint."
+				},
+				"getColor": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the color of a joint."
+				},
+				"getAngle": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"bearing",
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the angle of a bearing."
+				},
+				"getAngularVelocity": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"bearing",
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the angular velocity of a bearing.\n\nThe angular velocity can be set using [`setMotorVelocity`](#sm.joint.setmotorvelocity \"sm.joint.setmotorvelocity\") or [`setTargetAngle`](#sm.joint.settargetangle \"sm.joint.settargetangle\")."
+				},
+				"getAppliedImpulse": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"bearing",
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the applied impulse of a bearing.\n\nThe applied impulse can be set using [`setMotorVelocity`](#sm.joint.setmotorvelocity \"sm.joint.setmotorvelocity\") or [`setTargetAngle`](#sm.joint.settargetangle \"sm.joint.settargetangle\")."
+				},
+				"isReversed": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"bearing",
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns whether a bearing has been reversed using the _Connect Tool_. A reversed bearing rotates counterclockwise."
+				},
+				"setMotorVelocity": {
+					"args": 3,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"bearing",
+								"joint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Sets the motor velocity for a bearing. The bearing will try to maintain the target velocity with the given amount of impulse/strength.\n\nIn Scrap Mechanic, the Gas Engine increases both velocity and impulse with every gear. The Electic Engine increases velocity, but maintains the same impulse for every gear, making it sturdier.\n\nThis method cancels the effects of [`setTargetAngle`](#sm.joint.settargetangle \"sm.joint.settargetangle\")."
+				},
+				"setTargetAngle": {
+					"args": 4,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"bearing",
+								"joint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Sets the target angle for a bearing. The bearing will try to reach the target angle with the target velocity and the given amount of impulse/strength.\n\nThe target angle is set to range between `-math.pi` and `+math.pi`. The bearing will always try to rotate in the direction closest to the target angle.\n\nThis method cancels the effects of [`setMotorVelocity`](#sm.joint.setmotorvelocity \"sm.joint.setmotorvelocity\")."
+				},
+				"getLength": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"piston",
+								"joint"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns the current length of a piston. The length is measured in blocks."
+				},
+				"setTargetLength": {
+					"args": 4,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"piston",
+								"joint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Sets the target length for a piston. The piston will try to reach the target length with the target velocity and the given amount of impulse/strength.\n\nThe target length is measured in blocks.\n\nThis method cancels the effects of [`setMotorVelocity`](#sm.joint.setmotorvelocity \"sm.joint.setmotorvelocity\")."
+				}
+			},
+			"userdata": {
 				"createPart": {
 					"args": 6,
 					"sandbox": "",
@@ -7810,321 +8254,6 @@
 					],
 					"returns": []
 				}
-			},
-			"userdata": {
-				"createPart": {
-					"args": 6,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"uuid"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"createBlock": {
-					"args": 5,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"uuid"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getId": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getType": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getShapeA": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getShapeB": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getColor": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getAngle": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"bearing",
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getAngularVelocity": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"bearing",
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getAppliedImpulse": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"bearing",
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"isReversed": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"bearing",
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"setMotorVelocity": {
-					"args": 3,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"bearing",
-								"joint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"setTargetAngle": {
-					"args": 4,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"bearing",
-								"joint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getLength": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"piston",
-								"joint"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"setTargetLength": {
-					"args": 4,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"piston",
-								"joint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				}
 			}
 		},
 		"sm.container": {
@@ -8132,21 +8261,24 @@
 			"tabledata": {
 				"beginTransaction": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Starts a new _transaction_ shared across all containers. A transaction is a collection of all changes of container items will be collected and processed\n\nA transaction must be ended with [`sm.container.endTransaction`](#sm.container.endtransaction \"sm.container.endtransaction\")."
 				},
 				"endTransaction": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Ends a transaction."
 				},
 				"abortTransaction": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Aborts a transaction."
 				},
 				"getSize": {
 					"args": 1,
@@ -8159,7 +8291,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the number of slots in a container."
 				},
 				"getMaxStackSize": {
 					"args": 1,
@@ -8176,7 +8309,7 @@
 				},
 				"setItem": {
 					"args": 5,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -8209,11 +8342,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the number of items stacked in a given container slot."
 				},
 				"getItem": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -8228,7 +8362,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns a table containing item uuid, quantity (and instance id for tools) at given slot."
 				},
 				"getFirstItem": {
 					"args": 1,
@@ -8245,7 +8380,7 @@
 				},
 				"hasChanged": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -8260,11 +8395,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns true if the given tick is lower than the tick the container was last changed."
 				},
 				"isEmpty": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "serverMethod",
 					"params": [
 						{
 							"type": [
@@ -8273,7 +8409,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns true if the container is empty."
 				},
 				"getId": {
 					"args": 1,
@@ -8587,63 +8724,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"container"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"container"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			},
 			"userdata": {
@@ -8893,6 +8973,63 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"container"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"container"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -8995,63 +9132,6 @@
 						}
 					],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"quest"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"quest"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			},
 			"userdata": {
@@ -9124,6 +9204,63 @@
 					"args": 1,
 					"sandbox": "",
 					"params": [
+						{
+							"type": [
+								"quest"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"quest"
+							],
+							"name": ""
+						},
 						{
 							"type": [
 								"quest"
@@ -9461,63 +9598,6 @@
 						{
 							"type": [
 								"table"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"harvestable"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"harvestable"
 							],
 							"name": ""
 						}
@@ -9908,69 +9988,6 @@
 						}
 					],
 					"returns": []
-				}
-			}
-		},
-		"sm.character": {
-			"constants": {},
-			"tabledata": {
-				"createCharacter": {
-					"args": 6,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"world"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"character"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"preloadRenderables": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"table"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -10016,13 +10033,77 @@
 					"params": [
 						{
 							"type": [
-								"character"
+								"harvestable"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"harvestable"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				}
+			}
+		},
+		"sm.character": {
+			"constants": {},
+			"tabledata": {
+				"createCharacter": {
+					"args": 6,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"world"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
 							],
 							"name": ""
 						},
 						{
 							"type": [
 								"character"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Creates a new character in a world."
+				},
+				"preloadRenderables": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"table"
 							],
 							"name": ""
 						}
@@ -10876,60 +10957,6 @@
 						}
 					],
 					"returns": []
-				}
-			}
-		},
-		"sm.player": {
-			"constants": {},
-			"tabledata": {
-				"getAllPlayers": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
-				},
-				"placeLift": {
-					"args": 5,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"integer"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"integer"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"removeLift": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -10975,18 +11002,75 @@
 					"params": [
 						{
 							"type": [
-								"player"
+								"character"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"player"
+								"character"
 							],
 							"name": ""
 						}
 					],
 					"returns": []
+				}
+			}
+		},
+		"sm.player": {
+			"constants": {},
+			"tabledata": {
+				"getAllPlayers": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": [],
+					"description": "Returns a table of all [`players`](#userdata.player \"userdata.player\") that are currently in the game."
+				},
+				"placeLift": {
+					"args": 5,
+					"sandbox": "serverMethod",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"integer"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"integer"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Place down a lift game object"
+				},
+				"removeLift": {
+					"args": -1,
+					"sandbox": "serverMethod",
+					"params": [],
+					"returns": [],
+					"description": "Remove the player's lift, if the lift exists."
 				}
 			},
 			"userdata": {
@@ -11125,51 +11209,6 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
-				}
-			}
-		},
-		"sm.unit": {
-			"constants": {},
-			"tabledata": {
-				"createUnit": {
-					"args": 4,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"uuid"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table",
-								"string",
-								"number"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getAllUnits": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
 				},
 				"__newindex": {
 					"args": 2,
@@ -11215,17 +11254,62 @@
 					"params": [
 						{
 							"type": [
-								"unit"
+								"player"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"unit"
+								"player"
 							],
 							"name": ""
 						}
 					],
+					"returns": []
+				}
+			}
+		},
+		"sm.unit": {
+			"constants": {},
+			"tabledata": {
+				"createUnit": {
+					"args": 4,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"uuid"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table",
+								"string",
+								"number"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"getAllUnits": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
 					"returns": []
 				}
 			},
@@ -11440,19 +11524,14 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
-				}
-			}
-		},
-		"sm.aiState": {
-			"constants": {},
-			"tabledata": {
+				},
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
 					"params": [
 						{
 							"type": [
-								"aistate"
+								"unknown"
 							],
 							"name": ""
 						},
@@ -11471,7 +11550,7 @@
 					"params": [
 						{
 							"type": [
-								"aistate"
+								"unknown"
 							],
 							"name": ""
 						},
@@ -11490,26 +11569,24 @@
 					"params": [
 						{
 							"type": [
-								"aistate"
+								"unit"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"aistate"
+								"unit"
 							],
 							"name": ""
 						}
 					],
 					"returns": []
-				},
-				"__gc": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
 				}
-			},
+			}
+		},
+		"sm.aiState": {
+			"constants": {},
+			"tabledata": {},
 			"userdata": {
 				"start": {
 					"args": 1,
@@ -11641,6 +11718,69 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"aistate"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"aistate"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"aistate"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"aistate"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__gc": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
 				}
 			}
 		},
@@ -11684,7 +11824,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates a new box area trigger at a given position with a given size.\n\nIf a filter is specified, the trigger area will only be able to detects objects of that certain type. See [`sm.areaTrigger.filter`](#sm.areatrigger.filter \"sm.areatrigger.filter\") for more information about filters."
 				},
 				"createBoxWater": {
 					"args": 4,
@@ -11760,7 +11901,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates an area trigger box with a given size that stays attached to an [`interactable`](#sm.interactable \"sm.interactable\")\n\nIf a filter is specified, the trigger area will only be able to detects objects of that certain type. See [`sm.areaTrigger.filter`](#sm.areatrigger.filter \"sm.areatrigger.filter\") for more information about filters."
 				},
 				"destroy": {
 					"args": 1,
@@ -11773,77 +11915,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"areatrigger"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"areatrigger"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__gc": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"areatrigger"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
+					"returns": [],
+					"description": "Destroys an area trigger."
 				}
 			},
 			"userdata": {
@@ -12064,6 +12137,76 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"areatrigger"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"areatrigger"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__gc": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"areatrigger"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -12128,63 +12271,6 @@
 						{
 							"type": [
 								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"portal"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"portal"
 							],
 							"name": ""
 						}
@@ -12411,12 +12497,101 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"portal"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"portal"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
 		"sm.lift": {
 			"constants": {},
-			"tabledata": {
+			"tabledata": {},
+			"userdata": {
+				"getId": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"lift"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"getWorldPosition": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
+				},
+				"getLevel": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
+				},
+				"hasBodies": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
+				},
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -12474,39 +12649,6 @@
 					],
 					"returns": []
 				}
-			},
-			"userdata": {
-				"getId": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"lift"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getWorldPosition": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
-				},
-				"getLevel": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
-				},
-				"hasBodies": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
-				}
 			}
 		},
 		"sm.vec3": {
@@ -12538,19 +12680,22 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates a new vector."
 				},
 				"zero": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Creates a new vector with 0 in x, y, x."
 				},
 				"one": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Creates a new vector with 1 in x, y, x."
 				},
 				"getX": {
 					"args": 1,
@@ -12563,7 +12708,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the X value of a vector."
 				},
 				"setX": {
 					"args": 2,
@@ -12583,7 +12729,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the X value of a vector."
 				},
 				"getY": {
 					"args": 1,
@@ -12596,7 +12743,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the Y value of a vector."
 				},
 				"setY": {
 					"args": 2,
@@ -12616,7 +12764,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the Y value of a vector."
 				},
 				"getZ": {
 					"args": 1,
@@ -12629,7 +12778,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the Z value of a vector."
 				},
 				"setZ": {
 					"args": 2,
@@ -12649,7 +12799,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the Z value of a vector."
 				},
 				"normalize": {
 					"args": 1,
@@ -12662,7 +12813,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Normalizes a vector, ie. converts to a unit vector of length 1."
 				},
 				"dot": {
 					"args": 2,
@@ -12681,7 +12833,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the [dot product](https://en.wikipedia.org/wiki/Dot_product) of a vector."
 				},
 				"cross": {
 					"args": 2,
@@ -12700,7 +12853,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the [cross product](https://en.wikipedia.org/wiki/Cross_product) of two vectors."
 				},
 				"length": {
 					"args": 1,
@@ -12713,7 +12867,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the distance of the vector.\n\nIf you want the squared length, using [`length2`](#sm.vec3.length2 \"sm.vec3.length2\") is faster than squaring the result of this function."
 				},
 				"length2": {
 					"args": 1,
@@ -12726,7 +12881,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the squared distance of the vector."
 				},
 				"lerp": {
 					"args": 3,
@@ -12752,7 +12908,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Performs a [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation) between two vectors."
 				},
 				"bezier2": {
 					"args": 4,
@@ -12842,6 +12999,209 @@
 							"name": ""
 						}
 					],
+					"returns": [],
+					"description": "Rotate a vector around the X axis."
+				},
+				"rotateY": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Rotate a vector around the Y axis."
+				},
+				"rotateZ": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Rotate a vector around the Z axis."
+				},
+				"rotate": {
+					"args": 3,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Rotate a vector around an axis."
+				},
+				"getRotation": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Returns a [`quaternion`](#userdata.quat \"userdata.quat\") representing the rotation from one vector to another.\n\nThe quaternion can then be multiplied with any vector to rotate it in the same fashion.\n\nv1 \\= sm.vec3.new(1,0,0)\nv2 \\= sm.vec3.new(0,1,0)\n\ntrans \\= sm.vec3.getRotation(v1, v2)\n\\-- \\`trans\\` now rotates a vector 90 degrees\n\nprint(trans \\* v2)\n\\-- {<Vec3>, x = -1, y = 0, z = 0}"
+				},
+				"closestAxis": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Finds the closest axis-aligned vector from the given vector"
+				}
+			},
+			"userdata": {
+				"normalize": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"dot": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"cross": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"length": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"length2": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"rotateX": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
 					"returns": []
 				},
 				"rotateY": {
@@ -12901,38 +13261,6 @@
 							],
 							"name": ""
 						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getRotation": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"closestAxis": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
 						{
 							"type": [
 								"vec3"
@@ -13130,171 +13458,6 @@
 					],
 					"returns": []
 				}
-			},
-			"userdata": {
-				"normalize": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"dot": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"cross": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"length": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"length2": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotateX": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotateY": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotateZ": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"rotate": {
-					"args": 3,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				}
 			}
 		},
 		"sm.quat": {
@@ -13333,13 +13496,15 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates a new quaternion."
 				},
 				"identity": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Creates a new identity quaternion."
 				},
 				"angleAxis": {
 					"args": 2,
@@ -13372,7 +13537,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the X value of a quaternion."
 				},
 				"setX": {
 					"args": 2,
@@ -13392,7 +13558,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the X value of a quaternion."
 				},
 				"getY": {
 					"args": 1,
@@ -13405,7 +13572,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the Y value of a quaternion."
 				},
 				"setY": {
 					"args": 2,
@@ -13425,7 +13593,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the Y value of a quaternion."
 				},
 				"getZ": {
 					"args": 1,
@@ -13438,7 +13607,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the Z value of a quaternion."
 				},
 				"setZ": {
 					"args": 2,
@@ -13458,7 +13628,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the Z value of a quaternion."
 				},
 				"getW": {
 					"args": 1,
@@ -13471,7 +13642,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the W value of a quaternion."
 				},
 				"setW": {
 					"args": 2,
@@ -13491,7 +13663,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the W value of a quaternion."
 				},
 				"round90": {
 					"args": 1,
@@ -13504,7 +13677,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Rounds the quaternion rotation into 90 degree steps"
 				},
 				"lookRotation": {
 					"args": 2,
@@ -13523,7 +13697,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Create a new quaternion from direction vectors"
 				},
 				"slerp": {
 					"args": 3,
@@ -13549,8 +13724,11 @@
 							"name": ""
 						}
 					],
-					"returns": []
-				},
+					"returns": [],
+					"description": "Performs a spherical linear interpolation between two quaternion."
+				}
+			},
+			"userdata": {
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -13628,8 +13806,7 @@
 					],
 					"returns": []
 				}
-			},
-			"userdata": {}
+			}
 		},
 		"sm.uuid": {
 			"constants": {},
@@ -13645,14 +13822,18 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Generates a uuid."
 				},
 				"getNil": {
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": []
-				},
+					"returns": [],
+					"description": "Creates a nil uuid {00000000-0000-0000-0000-000000000000}"
+				}
+			},
+			"userdata": {
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -13723,8 +13904,7 @@
 					],
 					"returns": []
 				}
-			},
-			"userdata": {}
+			}
 		},
 		"sm.color": {
 			"constants": {},
@@ -13763,7 +13943,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates a new color object from a hex value `0xRRBBGGAA`."
 				},
 				"getR": {
 					"args": 1,
@@ -13776,7 +13957,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the red value of a color."
 				},
 				"getG": {
 					"args": 1,
@@ -13789,7 +13971,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the green value of a color."
 				},
 				"getB": {
 					"args": 1,
@@ -13802,7 +13985,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the blue value of a color."
 				},
 				"getA": {
 					"args": 1,
@@ -13815,7 +13999,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Returns the alpha value of a color."
 				},
 				"setR": {
 					"args": 2,
@@ -13835,7 +14020,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the red value of a color."
 				},
 				"setG": {
 					"args": 2,
@@ -13855,7 +14041,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the green value of a color."
 				},
 				"setB": {
 					"args": 2,
@@ -13875,7 +14062,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the blue value of a color."
 				},
 				"setA": {
 					"args": 2,
@@ -13891,6 +14079,22 @@
 							"type": [
 								"number",
 								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": [],
+					"description": "Sets the alpha value of a color."
+				}
+			},
+			"userdata": {
+				"getHexStr": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"color"
 							],
 							"name": ""
 						}
@@ -14047,65 +14251,11 @@
 					],
 					"returns": []
 				}
-			},
-			"userdata": {
-				"getHexStr": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"color"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				}
 			}
 		},
 		"sm.raycastResult": {
 			"constants": {},
-			"tabledata": {
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				}
-			},
+			"tabledata": {},
 			"userdata": {
 				"getBody": {
 					"args": 1,
@@ -14197,6 +14347,44 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -14221,6 +14409,58 @@
 							"name": ""
 						}
 					],
+					"returns": []
+				}
+			},
+			"userdata": {
+				"destroy": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
+					"returns": []
+				},
+				"connect": {
+					"args": 5,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"pathnode"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"table"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"number",
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"getPosition": {
+					"args": -1,
+					"sandbox": "",
+					"params": [],
 					"returns": []
 				},
 				"__newindex": {
@@ -14278,58 +14518,6 @@
 							"name": ""
 						}
 					],
-					"returns": []
-				}
-			},
-			"userdata": {
-				"destroy": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
-					"returns": []
-				},
-				"connect": {
-					"args": 5,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"pathnode"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"table"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"number",
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"getPosition": {
-					"args": -1,
-					"sandbox": "",
-					"params": [],
 					"returns": []
 				}
 			}
@@ -15030,63 +15218,6 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"widget"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"widget"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
 				}
 			},
 			"userdata": {
@@ -15161,12 +15292,7 @@
 					"sandbox": "",
 					"params": [],
 					"returns": []
-				}
-			}
-		},
-		"sm.gui.interface": {
-			"constants": {},
-			"tabledata": {
+				},
 				"__newindex": {
 					"args": 2,
 					"sandbox": "",
@@ -15211,33 +15337,24 @@
 					"params": [
 						{
 							"type": [
-								"guiinterface"
+								"widget"
 							],
 							"name": ""
 						},
 						{
 							"type": [
-								"guiinterface"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__gc": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"guiinterface"
+								"widget"
 							],
 							"name": ""
 						}
 					],
 					"returns": []
 				}
-			},
+			}
+		},
+		"sm.gui.interface": {
+			"constants": {},
+			"tabledata": {},
 			"userdata": {
 				"destroy": {
 					"args": 1,
@@ -16123,6 +16240,76 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"guiinterface"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"guiinterface"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__gc": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"guiinterface"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -16131,7 +16318,7 @@
 			"tabledata": {
 				"createParticle": {
 					"args": 4,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -16158,7 +16345,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Create a particle effect at a given position and rotation.\n\nNote\n\nIf you start a looping particle effect through this method then the only way to get rid of it is by reloading the save."
 				}
 			},
 			"userdata": {}
@@ -16207,7 +16395,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Plays an effect. If this function is called on the server it will play the effect on all clients.\n\nNote\n\nIf you start a looping effect using this function you will not be able to stop it.  \nPlease use [`createEffect`](#sm.effect.createeffect \"sm.effect.createeffect\") for looping effects"
 				},
 				"playHostedEffect": {
 					"args": 4,
@@ -16242,7 +16431,7 @@
 				},
 				"createEffect": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -16264,7 +16453,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Creates an effect.\n\nIf you provide a host interactable to the effect then it will fetch position, velocity and orientation data from the interactable instead of relying on this information being fed to it.\n\nThis results in far more accurate positioning of effects that are supposed to stay attached to an object."
 				},
 				"createEffect2D": {
 					"args": 1,
@@ -16273,76 +16463,6 @@
 						{
 							"type": [
 								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__eq": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"effect"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"effect"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__gc": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"effect"
 							],
 							"name": ""
 						}
@@ -16572,6 +16692,76 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__eq": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"effect"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"effect"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__gc": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"effect"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -16580,7 +16770,7 @@
 			"tabledata": {
 				"play": {
 					"args": 2,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -16595,7 +16785,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Plays a sound.\n\nIf position is specified, the sound will play at the given coordinates in the world. Otherwise, the sound will play normally.\n\nFor a list of available sounds to play, see [`sm.audio.soundList`](#sm.audio.soundlist \"sm.audio.soundlist\")."
 				}
 			},
 			"userdata": {}
@@ -16605,49 +16796,56 @@
 			"tabledata": {
 				"getPlayer": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the player object of the local player."
 				},
 				"getId": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the unique player id of the local player."
 				},
 				"getPosition": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the world postition of the local player."
 				},
 				"getDirection": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the direction the local player is aiming."
 				},
 				"getRight": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the right-vector perpendicular to the local player's aim."
 				},
 				"getUp": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the up-vector perpendicular to the local player's aim."
 				},
 				"getRaycastStart": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the start position of the local player's raycast. The position depends on the [`camera`](#sm.camera \"sm.camera\")'s position, and whether it's in first- of third-person."
 				},
 				"getRaycast": {
 					"args": 3,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -16669,7 +16867,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Performs a [raycast](https://en.wikipedia.org/wiki/Ray_casting) relative to the local player's perspective."
 				},
 				"isInFirstPersonView": {
 					"args": -1,
@@ -16858,9 +17057,10 @@
 				},
 				"getPosition": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the world postition of the camera."
 				},
 				"getDefaultPosition": {
 					"args": -1,
@@ -16883,31 +17083,35 @@
 				},
 				"getDirection": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the direction the camera is aiming."
 				},
 				"getUp": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the up-vector perpendicular to the camera's aim."
 				},
 				"getRight": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the right-vector perpendicular to the camera's aim."
 				},
 				"getFov": {
 					"args": -1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [],
-					"returns": []
+					"returns": [],
+					"description": "Returns the camera's field of view angle."
 				},
 				"setShake": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -16917,7 +17121,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets the camera's level of camera shake."
 				},
 				"setCameraState": {
 					"args": 1,
@@ -17063,11 +17268,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Used to check collisions between the lift and the world."
 				},
 				"preloadRenderables": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17076,7 +17282,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Pre-loads renderable data to be used by the tool. This eliminates excessive loading during run time."
 				},
 				"forceTool": {
 					"args": 1,
@@ -17098,44 +17305,6 @@
 						{
 							"type": [
 								"uuid"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__newindex": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"__index": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"unknown"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"string"
 							],
 							"name": ""
 						}
@@ -17823,6 +17992,44 @@
 						}
 					],
 					"returns": []
+				},
+				"__newindex": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"__index": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"unknown"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
 				}
 			}
 		},
@@ -17831,7 +18038,7 @@
 			"tabledata": {
 				"setCreationBodies": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17840,11 +18047,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Sets an array of bodies to visualize."
 				},
 				"setCreationVisible": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17853,11 +18061,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls the visibility of the creation visualization"
 				},
 				"setCreationValid": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17866,11 +18075,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls the rendering of the creation visualization. "
 				},
 				"setCreationFreePlacement": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17879,11 +18089,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls the transform of the visualization. If true the visualization will render using setFreePlacementPosition/setFreePlacementRotation functions.\n\nIf false the visualization will render ontop of the creation."
 				},
 				"setCreationFreePlacementPosition": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17892,11 +18103,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Set the world position of the visualization. Only works if setFreePlacement is true."
 				},
 				"setCreationFreePlacementRotation": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17905,11 +18117,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Set the rotation index of the visualization. Only works if setFreePlacement is true."
 				},
 				"setLiftPosition": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17918,11 +18131,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Set the world position of the lift visualization."
 				},
 				"setLiftLevel": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17931,11 +18145,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Set the lift level of the lift visualization."
 				},
 				"setLiftVisible": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17944,11 +18159,12 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls the visibility of the lift visualization"
 				},
 				"setLiftValid": {
 					"args": 1,
-					"sandbox": "",
+					"sandbox": "clientMethod",
 					"params": [
 						{
 							"type": [
@@ -17957,7 +18173,8 @@
 							"name": ""
 						}
 					],
-					"returns": []
+					"returns": [],
+					"description": "Controls the rendering of the lift visualization. "
 				},
 				"setBlockVisualization": {
 					"args": 3,
@@ -17992,6 +18209,40 @@
 						{
 							"type": [
 								"string"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				}
+			},
+			"userdata": {
+				"setPosition": {
+					"args": 2,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"blueprint"
+							],
+							"name": ""
+						},
+						{
+							"type": [
+								"vec3"
+							],
+							"name": ""
+						}
+					],
+					"returns": []
+				},
+				"destroy": {
+					"args": 1,
+					"sandbox": "",
+					"params": [
+						{
+							"type": [
+								"blueprint"
 							],
 							"name": ""
 						}
@@ -18059,40 +18310,6 @@
 					"args": -1,
 					"sandbox": "",
 					"params": [],
-					"returns": []
-				}
-			},
-			"userdata": {
-				"setPosition": {
-					"args": 2,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"blueprint"
-							],
-							"name": ""
-						},
-						{
-							"type": [
-								"vec3"
-							],
-							"name": ""
-						}
-					],
-					"returns": []
-				},
-				"destroy": {
-					"args": 1,
-					"sandbox": "",
-					"params": [
-						{
-							"type": [
-								"blueprint"
-							],
-							"name": ""
-						}
-					],
 					"returns": []
 				}
 			}

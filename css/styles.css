@@ -11,21 +11,21 @@ p {
 	margin-top: 0;
 }
 
-a {
+a.pagelink {
 	transition: 0.6s;
 	color: #02e37a;
 	text-decoration: none;
+}
+
+a.pagelink:hover {
+	transition: 0.6s;
+	letter-spacing: 1px;
 }
 
 img {
 	width: 100%;
 	min-width: 200px;
 	max-width: 400px;
-}
-
-a:hover {
-	transition: 0.6s;
-	letter-spacing: 1px;
 }
 
 canvas {
@@ -69,7 +69,7 @@ canvas {
 	background-color: #191919;
 }
 
-.navigation-bar li > a {
+.navigation-bar li > a.pagelink {
 	letter-spacing: revert;
 }
 

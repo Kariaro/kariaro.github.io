@@ -55,38 +55,36 @@ function getHashNamespace(hash) {
 	return hash;
 }
 
-/**
- * This class is used to reduce the amount of calls to `element.innerHTML`
- */
-class TemplateBuilder {
-	constructor(elm) {
-		this.elm = elm;
-		this.html = elm.innerHTML;
-	}
 
-	/**
-	 * Make sure any calls to this function is escaped.
-	 * 
-	 * @param {string} key 
-	 * @param {string} value 
-	 */
-	set(key, value) {
-		if(this.html.replaceAll) {
-			this.html = this.html.replaceAll(key, value);
-		} else {
-			this.html = this.html.replace(new RegExp(key, "g"), value);
+function getTemplateBuilder(element) {
+	let object = {
+		'elm': element,
+		'html': element.innerHTML
+	};
+	object.func = {
+		/**
+		 * Make sure any calls to this function is escaped.
+		 * 
+		 * @param {string} key 
+		 * @param {string} value 
+		 */
+		set: function(key, value) {
+			if(object.html.replaceAll) {
+				object.html = object.html.replaceAll(key, value);
+			} else {
+				object.html = object.html.replace(new RegExp(key, "g"), value);
+			}
+
+			return object.func;
+		},
+		setOrDefault: function(key, value, def) {
+			if(value) return object.set(key, value);
+			return object.set(key, def);
+		},
+		build: function() {
+			object.elm.innerHTML = object.html;
+			return object.elm;
 		}
-
-		return this;
-	}
-
-	setOrDefault(key, value, def) {
-		if(value) return this.set(key, value);
-		return this.set(key, def);
-	}
-
-	build() {
-		this.elm.innerHTML = this.html;
-		return this.elm;
-	}
+	};
+	return object.func;
 }

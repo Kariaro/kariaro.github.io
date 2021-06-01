@@ -1,3 +1,12 @@
+body {
+	background-color: #222;
+}
+
+.box, .box-2, .box-3, .box-4 {
+	border-radius: 0;
+	background: #111;
+}
+
 #td-func-template, #ud-func-template {
 	display: none;
 }
@@ -39,12 +48,27 @@
 }
 
 
+/* #8C5F1F */
+/* #D99C45 */
+/* #FFC26B */
 
 dt {
-	background-color: #12304a;
-	border-top: 4px solid #384d7b;
+	background-color: #115B8C;
+	border-top: 4px solid #409DDB;
+	/* background-color: #12304a; */
+	/* border-top: 4px solid #384d7b; */
 	margin-bottom: 10px;
 	padding: 0 5px 5px 0;
+	overflow: hidden;
+}
+
+dd {
+	margin-inline-start: 20px;
+	font-size: 0.9em;
+}
+
+th {
+	float: left;
 }
 
 code.declsandbox {
@@ -80,10 +104,10 @@ code.declparam:not(:last-child):after, span.declparam-table:not(:last-child):aft
 }
 
 span.declparam-table code:before, span.declparam-table code:after {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	font-weight: bold;
 	font-style: italic;
-	color: #3a899b;
+	color: #2eb9d9;
 }
 
 span.declparam-table code:before {
@@ -108,9 +132,11 @@ span.declparam-table code em {
 }
 
 code.declparam {
-	color: #bda93d;
 	font-style: italic;
+	font-weight: bold;
 	font-size: 0.9em;
+	color: #FFC26B;
+	/* color: #bda93d; */
 }
 
 code.declname {
@@ -138,15 +164,6 @@ span.declparameters code.declparam, span.decllink {
 
 #td-container {
 	margin-bottom: 100px;
-}
- 
-dd {
-	margin-inline-start: 30px;
-	font-size: 0.9em;
-}
-
-th {
-	float: left;
 }
 
 span.decllink {

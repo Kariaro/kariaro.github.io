@@ -116,8 +116,6 @@ function makeClass(path, json) {
 }
 
 function makeFunction(element, path, is_userdata, name, json) {
-	var builder = new TemplateBuilder(element);
-
 	if(is_userdata) {
 		if(json.params) {
 			if(json.params.length > 0) {
@@ -130,9 +128,10 @@ function makeFunction(element, path, is_userdata, name, json) {
 		}
 	}
 	
-	let decl_name = Utils.escapeHtml(is_userdata ? (path + ':' + name):(path + '.' + name));
+	let decl_name = Utils.escapeHtml(path + (is_userdata ? ':':'.') + name);
 	element.id = decl_name;
-	builder.set('{DECLSANDBOX}', Utils.escapeHtml(json.sandbox))
+	getTemplateBuilder(element)
+		.set('{DECLSANDBOX}', Utils.escapeHtml(json.sandbox))
 		.set('{DESCRIPTION}', ('description' in json) ? Utils.escapeHtml(json.description):'')
 		.set('{DECLPARAMS}', makeDeclparams(json.params))
 		.set('{DECLNAME}', decl_name)

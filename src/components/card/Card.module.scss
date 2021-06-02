@@ -1,0 +1,16 @@
+.Horizontal {
+	display: flex;
+}
+
+.Vertical {
+	display: block;
+	width: 100%;
+}
+
+.Card {
+	background: #333;
+	padding: 10px;
+	border-radius: 0;
+	margin: 5px;
+	flex: 1;
+}

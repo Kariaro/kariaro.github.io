@@ -1,0 +1,29 @@
+.Item {
+	background-color: #111;
+	color: #fff;
+	display: inline-block;
+	padding: 14px 20px;
+	user-select: none;
+	text-align: left;
+
+	&:hover {
+		background-color: #333;
+		transition: 0.2s;
+	}
+}
+
+.SelectedItem {
+	background-color: #222;
+	color: #fff;
+	display: inline-block;
+	padding: 14px 20px;
+	user-select: none;
+	text-align: left;
+	pointer-events: none;
+}
+
+.SelectedLink {
+	color: #fff;
+	text-decoration: none;
+}
+

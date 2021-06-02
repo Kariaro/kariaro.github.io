@@ -6,7 +6,7 @@ function Navbar(props) {
 	return (
 		<div className={`${navbarStyles.TopBar}`}>
 			<MenuItem name="Github Home" href="/" />
-			<MenuItem name="ScrapMechanic Docs" href="/smdocs/" />
+			<MenuItem name="ScrapMechanic Documentation" href="/smdocs" />
 		</div>
 	);
 }

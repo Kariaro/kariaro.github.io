@@ -1,0 +1,132 @@
+#slideshow-index {
+	color: #f2f2f2;
+	font-size: 12px;
+	margin: 6px 4px;
+	padding: 2px 8px;
+	position: absolute;
+	top: 0;
+	z-index: 9999;
+	text-shadow: #000 0 0 3px, #fff 0 0 5px;
+	background-color: #0007;
+	border-radius: 10px;
+}
+
+#project-slideshow {
+	position: relative;
+}
+
+.project {
+	position: relative;
+	margin-bottom: 40px;
+	display: none;
+}
+
+.project > img {
+	box-shadow: #000 0 0 10px;
+}
+
+.project-title {
+	position: relative;
+	width: 100%;
+}
+
+.project-title > div {
+	position: absolute;
+	top: 0;
+	left: 0px;
+	width: 100%;
+	padding-top: 6px;
+}
+
+.project-title > div > div {
+	position: absolute;
+	top: 0;
+	left: 0px;
+	width: 100%;
+	padding-top: 6px;
+}
+
+.project-title a {
+	color: #f2f2f2;
+	margin: 6px 2px;
+	padding: 2px 8px;
+	text-shadow: #000 0 0 3px, #fff 0 0 5px;
+	text-decoration: none;
+	background-color: #0007;
+	border-radius: 10px;
+}
+
+/*.project-title a::before {
+	content: "GitHub";
+}*/
+
+.project-title a:hover {
+	text-decoration: underline;
+}
+
+.project-description {
+	color: #f2f2f2;
+	font-size: 15px;
+	bottom: 8px;
+	width: 100%;
+	position: absolute;
+}
+
+.project-description div {
+	margin: 6px 0;
+	padding: 2px 6px;
+	text-align: center;
+	text-shadow: #000 0 0 1px, #000 0 0 5px, #000 0 0 10px, #000 0 1px 2px;
+	background-color: #0007;
+	border-radius: 10px;
+	width: 80%;
+	margin: auto;
+}
+
+.project > img {
+	width: 100%;
+	margin: auto;
+	pointer-events: none;
+	user-select: none;
+}
+
+/* Fade animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 0.5s;
+}
+
+@keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
+/* Previous and next buttons */
+#slideshow-prev, #slideshow-next {
+	z-index: 9999;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -14px;
+	padding: 8px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	user-select: none;
+}
+
+#slideshow-prev {
+	left: 0;
+	border-radius: 0 5px 5px 0;
+}
+
+#slideshow-next {
+	right: 0;
+	border-radius: 5px 0 0 5px;
+}
+
+#slideshow-prev:hover, #slideshow-next:hover {
+	background-color: rgba(0,0,0,0.4);
+}

@@ -5,70 +5,81 @@
 		<title>HardCoded</title>
 		<meta name="description" content="A testing webpage">
 		<meta name="author" content="HardCoded">
-
-		<link rel="stylesheet" href="/css/styles.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/slideshow.css">
+		<script type="text/javascript" src="/scripts/slideshow.js"></script>
 	</head>
 	<body>
-		<!-- Navbar -->
-		<div class="top-bar">
-			<div class="navigation-bar">
-				<ul>
-					<li class="navigation-sel"><span>GitHub Home</span></li>
-					<li><a class="pagelink" href="/smdocs">ScrapMechanic Documentation</a></li>
-				</ul>
-			</div>
+		<div id="navbar">
+			<ul>
+				<li><a class="navlink" href="https://github.com/Kariaro" target="blank"><img src="/images/github-icon.svg" alt="GitHub"/>GitHub</a></li>
+				<li><a class="navlink" href="https://twitter.com/HardCodedTwitch" target="blank"><img src="/images/twitter-icon.svg" alt="Twitter"/>Twitter</a></li>
+				<li><a class="navlink" href="https://www.youtube.com/@HardCodedYT" target="blank"><img src="/images/youtube-icon.svg" alt="YouTube"/>YouTube</a></li>
+				<li><a class="navlink" href="https://www.twitch.tv/hard_coded" target="blank"><img src="/images/twitch-icon.svg" alt="Twitch"/>Twitch</a></li>
+				<li><a class="navlink" href="https://steamcommunity.com/profiles/76561198251506208" target="blank"><img src="/images/steam-icon.svg" alt="Steam"/>Steam</a></li>
+				<li><a class="navlink" href="https://soundcloud.com/hard_coded" target="blank"><img src="/images/soundcloud-icon.svg" alt="SoundCloud"/>SoundCloud</a></li>
+			</ul>
 		</div>
-		
 		<canvas id="canvas"></canvas>
 		<script type="text/javascript" src="/scripts/dots.js"></script>
-		<div class="content">
-			<div class="v-layout">
-				<div class="h-layout">
-					<div class="box-2" style="max-width: 200px">
-						<img src="images/logo.png"></img>
-					</div>
-					<div class="box-3">
-						<p>I started coding 2012 and since then I done many projects.</p>
-						<span>GitHub: <a class="pagelink" href="https://github.com/Kariaro" target="blank">[GitHub HardCoded]</a></span><br>
-						<span>Steam: <a class="pagelink" href="http://steamcommunity.com/profiles/76561198251506208" target="blank">[Steam HardCoded]</a></span><br>
-						<span>Twitter: <a class="pagelink" href="https://twitter.com/HardCodedTwitch" target="blank">[Twitter HardCoded]</a></span><br>
-						<span>Twitch: <a class="pagelink" href="https://www.twitch.tv/hard_coded" target="blank">[Twitch HardCoded]</a></span><br>
-						<span>SoundCloud: <a class="pagelink" href="https://soundcloud.com/hard_coded" target="blank">[SoundCloud HardCoded]</a></span>
-					</div>
-				</div>
-				<div class="h-layout">
-					<div class="filler">
-					</div>
-				</div>
+		<div id="content">
+			<div class="center">
+				<h1>About me</h1>
+				<p>I started coding 2012 and since then I done many projects.</p>
+				<p>This page was made to show some projects I've made and share my links.</p>
+				
+				<h1>Projects</h1>
 			</div>
 			
-			<div class="horizontal-card">
-				<div class="horizontal-card-2">
-					<div class="card">
-						<p class="card-title">ProjectEdit</p>
-						<img src="images/project_edit.png"></img>
-					</div>
+			<div class="center">
+				<!-- Create a project slideshow that is easy to update -->
+				<div id="project-slideshow" style="display:none">
+					<div id="slideshow-index">NaN / NaN</div>
+					<a id="slideshow-prev" onclick="incrementSlides(-1)">&#10094;</a>
+					<a id="slideshow-next" onclick="incrementSlides(1)">&#10095;</a>
 					
-					<div class="card-right">
-						<span class="center">This project aims to create a minecraft world editor in
-						LWJGL 3.
-						</span>
-						<br><a class="pagelink" href="https://github.com/Kariaro/ProjectEdit" target="blank">[ProjectEdit]</a>
-					</div>
-				</div>
-				
-				<div class="horizontal-card-2">
-					<div class="card">
-						<p class="card-title">ScrapMechanicWorldViewer</p>
-						<img src="images/scrapmechanic_worldviewer.png"></img>
-					</div>
+					<project class="project"
+						title="VRigUnity"
+						image="images/projects/vrigunity.png"
+						link="https://github.com/Kariaro/VRigUnity">
+						This project is a VTubing app that uses an AI to controll a virtual character
+					</project>
 					
-					<div class="card-right">
-						<span class="center">This project is a interactive world viewer made for the game ScrapMechanic.</span>
-						<br><a class="pagelink" href="https://github.com/Kariaro/ScrapMechanicWorldViewer" target="blank">[ScrapMechanicWorldViewer]</a>
-					</div>
+					<project class="project"
+						title="AmpleProgrammingLanguage"
+						image="images/projects/ampleprogramminglanguage.png"
+						link="https://github.com/Kariaro/AmpleProgrammingLanguage">
+						I've always liked programming languages and this is my own programming language Ample
+					</project>
+					
+					<project class="project"
+						title="ProjectEdit"
+						image="images/projects/project_edit.png"
+						link="https://github.com/Kariaro/ProjectEdit">
+						This project is a 3D minecraft world viewer made in LWJGL 3
+					</project>
+					
+					<project class="project"
+						title="BobRust"
+						image="images/projects/bob-rust.jpg"
+						link="https://github.com/Bob-Rust/Bob-Rust-Java">
+						This project is a automatical painter application for the game Rust
+						<br>( <a href="https://www.youtube.com/watch?v=njV3HT0HIvQ" target="blank">Youtube Video</a> )
+					</project>
+					
+					<project class="project"
+						title="ScrapMechanicWorldViewer"
+						image="images/projects/scrapmechanic_worldviewer.png"
+						link="https://github.com/Kariaro/ScrapMechanicWorldViewer">
+						This project is a interactive world viewer made for the game ScrapMechanic
+					</project>
 				</div>
 			</div>
 		</div>
+		<footer>
+			Page was last updated December 2022
+		</footer>
 	</body>
 </html>
